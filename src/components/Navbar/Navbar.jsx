@@ -2,7 +2,7 @@ import "./navbar.css"
 import { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { BsSearch } from "react-icons/bs"
 import logo from "../../assets/logo.png"
 
