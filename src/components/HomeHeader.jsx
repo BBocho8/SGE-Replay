@@ -5,7 +5,7 @@ import { FiChevronDown } from "react-icons/fi"
 
 const HomeHeader = () => {
 	return (
-		<div className="h-[calc(100vh-56px)] overflow-hidden w-full m-auto relative ">
+		<div className="h-[calc(100vh-72px)] overflow-hidden w-full m-auto relative ">
 			<img src={img} alt="" className="object-cover" />
 			<div className="child">
 				<GamesContainer />

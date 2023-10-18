@@ -101,3 +101,12 @@ nav {
 		color: var(--primary-300);
 	}
 }
+
+.nav-link {
+	padding: 0.5rem 0.5rem 0.5rem 0;
+	transition: var(--transition);
+	letter-spacing: 2px;
+}
+.nav-link:hover {
+	color: var(--primary-500);
+}

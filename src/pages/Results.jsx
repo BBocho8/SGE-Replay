@@ -1,4 +1,12 @@
+import LastGames from "../components/LastGames"
+import NextGames from "../components/NextGames"
+
 const Results = () => {
-	return <div>Results</div>
+	return (
+		<div>
+			<LastGames />
+			<NextGames />
+		</div>
+	)
 }
 export default Results

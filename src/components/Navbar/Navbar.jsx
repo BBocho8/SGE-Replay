@@ -2,8 +2,9 @@ import "./navbar.css"
 import { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import { BsSearch } from "react-icons/bs"
+import logo from "../../assets/logo.png"
 
 const links = [
 	{
@@ -30,12 +31,12 @@ const links = [
 const social = [
 	{
 		id: 1,
-		url: "https://www.twitter.com",
+		url: "https://www.facebook.com/SGEintrachtMendigBell",
 		icon: <FaFacebook />,
 	},
 	{
 		id: 2,
-		url: "https://www.twitter.com",
+		url: "https://www.instagram.com/sgeintrachtmendigbell/",
 		icon: <FaInstagram />,
 	},
 ]
@@ -60,12 +61,11 @@ const Navbar = () => {
 		<nav>
 			<div className="nav-center">
 				<div className="nav-header">
-					{/* <img
-						src="https://www.fussball.de/export.media/-/action/getLogo/format/3/id/00ES8GNB78000035VV0AG08LVUPGND5I"
-						alt="logo"
-						className="logo"
-					/> */}
-					<p className="text-black font-bold">SG MENDIG REPLAY</p>
+					<div className="flex gap-x-2 items-center justify-center">
+						<img src={logo} alt="logo" className="logo" />
+
+						<p className="text-black font-bold">SG MENDIG REPLAY</p>
+					</div>
 					<button className="nav-toggle" onClick={toggleLinks}>
 						<FaBars />
 					</button>
@@ -75,16 +75,26 @@ const Navbar = () => {
 					ref={linkContainerRef}
 					style={linkStyles}
 				>
-					<ul className="links" ref={linksRef}>
+					<div className="flex gap-4" ref={linksRef}>
 						{links.map((link) => {
 							const { id, url, text } = link
 							return (
-								<li key={id}>
-									<Link to={url}>{text}</Link>
-								</li>
+								<NavLink
+									key={id}
+									to={url}
+									style={({ isActive }) => ({
+										color: isActive ? "rgb(249 115 22)" : "rgb(17 24 39)",
+										textTransform: "capitalize",
+										padding: "0.5rem 0.5rem 0.5rem 0",
+										letterSpacing: "2px",
+										fontWeight: "bold",
+									})}
+								>
+									{text}
+								</NavLink>
 							)
 						})}
-					</ul>
+					</div>
 				</div>
 				{/* SOCIAL LINKS */}
 				<ul className="social-icons">
