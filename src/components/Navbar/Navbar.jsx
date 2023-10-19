@@ -74,7 +74,7 @@ const Navbar = () => {
 					ref={linkContainerRef}
 					style={linkStyles}
 				>
-					<div className="flex gap-4" ref={linksRef}>
+					<div className="flex gap-4 justify-center" ref={linksRef}>
 						{links.map((link) => {
 							const { id, url, text } = link
 							return (

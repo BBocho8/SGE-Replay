@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @layer components {
-	.container {
-		@apply opacity-80 rounded-xl bg-gray-100 pb-4 relative md:max-w-3xl mx-auto px-8 grid grid-cols-12 grid-rows-2 items-center;
+	/*	.container {
+		@apply opacity-80 rounded-xl bg-gray-100 pb-4 relative max-w-sm md:max-w-3xl mx-auto px-8 grid grid-cols-12 grid-rows-2 items-center;
 	}
 	.next-game {
 		@apply col-span-5 row-span-2 text-xl font-bold flex flex-col justify-center items-start;
@@ -24,7 +24,28 @@
 	}
 	.empty {
 		@apply col-span-1 row-span-2;
-	}
+	}*/
+}
+
+.hero {
+	/* Sizing */
+	width: 100vw;
+	height: calc(100vh - 72px);
+
+	/* Flexbox stuff */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* Text styles */
+	text-align: center;
+
+	/* Background styles */
+	background-image: url("./assets/homeheader.jpg");
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
 }
 
 .child {
@@ -44,11 +65,6 @@
 
 .box span {
 	display: block;
-
-	/* border-bottom: 3px solid #fff;
-	border-right: 3px solid #fff; */
-	/* transform: rotate(45deg); */
-	/* margin: -15px; */
 	animation: animate 1s infinite;
 }
 
@@ -87,17 +103,15 @@ td {
 	text-align: center;
 }
 
+/* table,
+th,
+td {
+	border: 1px solid black;
+} */
+
 th {
 	background-color: black;
 	color: white;
-}
-
-.headin {
-	text-align: center;
-	text-decoration: none;
-	color: #ffe221;
-	margin: 30px;
-	display: block;
 }
 
 .wpos {
