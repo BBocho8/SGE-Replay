@@ -51,7 +51,6 @@ const useFetchGames = () => {
 			console.log(error)
 		}
 	}
-
 	useEffect(() => {
 		fetchGamesJSON()
 	}, [])

@@ -4,11 +4,13 @@ import GamesContainer from "./Game/GamesContainer"
 import { FiChevronDown } from "react-icons/fi"
 
 import { useGlobalContext } from "../context"
-import useFetchGames from "../../utils/fetchGames"
+// import useFetchGames from "../../utils/fetchGames"
 
 const HomeHeader = () => {
 	const { games } = useGlobalContext()
-	useFetchGames()
+	if (!games.data) {
+		return <h2>Loading...</h2>
+	}
 	const { nextGames } = games.data
 
 	return (

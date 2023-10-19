@@ -1,7 +1,6 @@
 import { nanoid } from "nanoid"
 
 const TableContainer = ({ table }) => {
-	console.log(table)
 	return (
 		<div className="ptable">
 			<h1 className="headin">BEZIRKSLIGA MITTE HERREN</h1>
@@ -23,7 +22,7 @@ const TableContainer = ({ table }) => {
 						const {
 							draw,
 							games,
-							goal,
+
 							goalDifference,
 							img,
 							isPromotion,
@@ -37,7 +36,7 @@ const TableContainer = ({ table }) => {
 						return (
 							<tr
 								key={nanoid()}
-								className={(isPromotion && "wpos") || (isRelegation && "pos")}
+								className={`${isPromotion && "wpos"} ${isRelegation && "pos"}`}
 							>
 								<td
 									className={team === "SGE Mendig" ? "font-bold text-2xl" : ""}

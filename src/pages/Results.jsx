@@ -4,7 +4,9 @@ import { useGlobalContext } from "../context"
 
 const Results = () => {
 	const { games } = useGlobalContext()
-
+	if (!games.data) {
+		return <h2>Loading...</h2>
+	}
 	const { prevGames, nextGames } = games.data
 	return (
 		<div>
