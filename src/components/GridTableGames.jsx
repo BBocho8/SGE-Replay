@@ -11,7 +11,7 @@ const GridTableGames = () => {
 	const { prevGames, nextGames, table } = games.data
 
 	return (
-		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-2 xl:max-w-screen-2xl">
+		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-2 xl:max-w-screen-2xl ">
 			<div className="mx-4 xl:px-0 xl:col-span-8 xl:row-span-2 xl:my-auto">
 				<div>
 					<LastGames isResult={true} isHomepage={false} games={prevGames} />
@@ -20,7 +20,7 @@ const GridTableGames = () => {
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			</div>
-			<div className=" mx-8 col-span-4 row-span-2 my-auto">
+			<div className="mx-8 col-span-4 row-span-2 my-auto">
 				<TableContainer table={table} />
 			</div>
 		</section>
