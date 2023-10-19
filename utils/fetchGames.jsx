@@ -40,7 +40,7 @@ const useFetchGames = () => {
 	async function fetchGamesJSON() {
 		try {
 			const result = await fetch(
-				"https://api-fussball.de/api/team/02EPUU1T88000000VS5489B1VT0RKM5V",
+				"/api/team/02EPUU1T88000000VS5489B1VT0RKM5V",
 				requestOptions
 			)
 			const json = await result.json()
