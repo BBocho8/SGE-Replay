@@ -1,6 +1,7 @@
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
 import GamesContainer from "./Game/GamesContainer"
+import { nanoid } from "nanoid"
 
 const responsive = {
 	0: {
@@ -15,26 +16,28 @@ const responsive = {
 	},
 }
 
-const items = [
-	<GamesContainer key={1} />,
-	<GamesContainer key={2} />,
-	<GamesContainer key={3} />,
-	<GamesContainer key={4} />,
-	<GamesContainer key={5} />,
-]
-
-const LastGames = () => (
+const LastGames = ({ isResult, isHomepage, games }) => (
 	<div className="py-4">
 		<h2 className="text-center text-4xl font-bold py-4">LAST RESULTS</h2>
 		<AliceCarousel
 			mouseTracking
-			items={items}
+			items={games.map((game) => {
+				return (
+					<GamesContainer
+						key={nanoid()}
+						isResult={isResult}
+						isHomepage={isHomepage}
+						{...game}
+					/>
+				)
+			})}
 			responsive={responsive}
 			autoPlay
 			autoPlayStrategy="none"
 			autoPlayInterval={3000}
-			animationDuration={1000}
-			animationType="fadeout"
+			animationDuration={2000}
+			animationEasingFunction="ease"
+			animationType="slide"
 			infinite
 			touchTracking={false}
 			disableButtonsControls

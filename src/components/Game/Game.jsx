@@ -1,27 +1,40 @@
-const Game = () => {
+const Game = ({
+	isResult,
+	isHomepage,
+	homeLogo,
+	awayLogo,
+	date,
+	time,
+	homeTeam,
+	homeScore,
+	awayTeam,
+	awayScore,
+	competition,
+}) => {
 	return (
 		<div className="container">
 			<div className="next-game">
-				<p className="uppercase">Next game</p>
-				<span className="text-orange-400 text-xl ">Dimanche 22 Oct 13h00</span>
+				{isHomepage && <p className="uppercase">Next game</p>}
+				<span className="text-orange-400 text-xl ">
+					{date}-{time}
+				</span>
 			</div>
 			<div className="empty"></div>
-			<div className="competition">BEZIRKSLIGA</div>
+			<div className="competition">{competition}</div>
 			<div className="team-vs">
 				<div className="team-next">
-					<img
-						src="https://www.fussball.de/export.media/-/action/getLogo/format/3/id/00ES8GNB78000035VV0AG08LVUPGND5I"
-						alt=""
-					/>
-					<span>SGE Mendig</span>
+					<img src={homeLogo} alt="" />
+					<span>{homeTeam}</span>
 				</div>
-				<p className="font-bold text-sm">VS</p>
+				{isResult ? (
+					<p className="font-bold text-3xl">{`${homeScore}-${awayScore}`}</p>
+				) : (
+					<p className="font-bold text-sm">VS</p>
+				)}
+
 				<div className="team-next">
-					<img
-						src="https://www.fussball.de/export.media/-/action/getLogo/format/3/id/00ES8GNB78000054VV0AG08LVUPGND5I"
-						alt=""
-					/>
-					<span>FV Rübenach</span>
+					<img src={awayLogo} alt="" />
+					<span>{awayTeam}</span>
 				</div>
 			</div>
 		</div>
