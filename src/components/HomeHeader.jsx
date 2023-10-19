@@ -15,11 +15,11 @@ const HomeHeader = () => {
 		<div className=" hero relative">
 			{/* <div className=" xl:h-[calc(100vh-72px)] overflow-hidden w-full m-auto relative "> */}
 			{/* <img src={img} alt="" className="object-cover" /> */}
-			<div className="child">
+			<div className="child top-[70%] left-[50%] md:top-[70%] ">
 				<GamesContainer isHomepage={true} isResult={false} {...nextGames[0]} />
 			</div>
 
-			<div className="box">
+			<div className="box top-[92%] left-[50%] md:top-[92%] ">
 				<a href="#content">
 					<span className="block cursor-pointer">
 						<FiChevronDown className="h-12 w-12  text-white" />

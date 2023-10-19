@@ -15,9 +15,10 @@ const Game = ({
 		<div className="opacity-80 rounded-xl bg-gray-100  pt-4 md:pt-0 pb-4 relative max-w-sm md:max-w-3xl mx-auto px-8 md:grid md:grid-cols-12 md:grid-rows-2 md:items-center">
 			<div className=" md:col-span-5 md:row-span-2 text-xl font-bold flex flex-col justify-center items-center md:items-start mb-1 md:mb-0">
 				{isHomepage && <p className="uppercase">Next game</p>}
-				<span className="text-orange-400 text-xl ">
-					{date}-{time}
-				</span>
+				<p className="text-orange-400 text-xl flex flex-col sm:flex-row sm:gap-x-4 gap-y-1 sm:gap-y-0 items-center justify-center">
+					<span>{date}</span>
+					<span>{time}</span>
+				</p>
 			</div>
 			<div className="md:col-span-1 md:row-span-2"></div>
 			<div className="mb-2 md:mb-0 text-center md:row-span-1 md:col-span-5 md:flex md:justify-center items-center uppercase font-bold text-xl">
