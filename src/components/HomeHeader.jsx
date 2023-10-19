@@ -12,7 +12,7 @@ const HomeHeader = () => {
 	const { nextGames } = games.data
 
 	return (
-		<div className=" hero relative">
+		<div className=" hero relative object-cover">
 			<div className="w-4/5 md:w-full md:mx-0 child top-[50%] left-[50%] md:top-[70%] ">
 				<GamesContainer isHomepage={true} isResult={false} {...nextGames[0]} />
 			</div>
