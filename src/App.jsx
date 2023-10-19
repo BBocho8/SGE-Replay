@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { Landing, Table, Results, Replay, HomeLayout } from "./pages"
 import useFetchGames from "../utils/fetchGames"
+import useFetchVideoGames from "../utils/fetchVideoGames"
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
 ])
 const App = () => {
 	useFetchGames()
+	useFetchVideoGames()
 
 	return <RouterProvider router={router} />
 }
