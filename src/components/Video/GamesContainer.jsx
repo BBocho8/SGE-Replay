@@ -8,7 +8,6 @@ import { sortVideoGames } from "../../../utils/sortGames"
 const GamesContainer = () => {
 	const { videoGames } = useGlobalContext()
 	const sortedGames = sortVideoGames(videoGames)
-	console.log(sortedGames)
 	return (
 		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center px-8 gap-x-2">
 			{sortedGames.map((game) => {
@@ -45,12 +44,23 @@ const GamesContainer = () => {
 										alt={`${homeTeam} ${awayTeam} ${competition}`}
 									/>
 								)}
-								<div className="flex flex-col items-center justify-center mt-2">
+								<div className="flex flex-col items-center justify-center my-2">
+									<p className="font-bold">{competition}</p>
 									<p>
 										{homeTeam} vs {awayTeam}
 									</p>
 									<p>{getFormattedDate(date)}</p>
 									<p>{getFormattedTime(date)}</p>
+									{isVideoAvailable ? (
+										<button className="btn">Full game</button>
+									) : (
+										<button
+											className="btn bg-opacity-70 bg-red-500 hover:bg-red-500 hover:text-white hover:bg-opacity-70 hover:border-red-500"
+											disabled
+										>
+											Video is not available
+										</button>
+									)}
 								</div>
 							</Link>
 						</div>
