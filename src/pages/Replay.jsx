@@ -5,7 +5,7 @@ const Replay = () => {
 	const { videoGames } = useGlobalContext()
 	return (
 		<section>
-			<h1 className="text-center text-h2 uppercase">All Full Game Replay</h1>
+			<h1 className="text-center text-h2 uppercase">All Full Game ReplaysÒ</h1>
 
 			<GamesContainer />
 			{videoGames.map((game) => {
