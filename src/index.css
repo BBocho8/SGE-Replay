@@ -2,267 +2,129 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ----------- PROJECT CLASSES ----------- */
+
+@layer base {
+	body {
+		@apply nav:text-body font-sans;
+	}
+	h1,
+	h2,
+	h3,
+	h4 {
+		@apply tracking-header capitalize leading-header mb-3 nav:leading-headerBigScreen;
+	}
+	h1 {
+		@apply text-h1 nav:text-h1BigScreen;
+	}
+	h2 {
+		@apply text-h2 nav:text-h2BigScreen;
+	}
+	h3 {
+		@apply text-h3 nav:text-h3BigScreen;
+	}
+	h4 {
+		@apply text-h4 nav:text-h4BigScreen;
+	}
+
+	th,
+	td {
+		@apply p-4;
+	}
+	th {
+		@apply bg-black bg-opacity-80 text-white;
+	}
+
+	nav {
+		@apply bg-white;
+	}
+}
+
 @layer components {
-	/*	.container {
-		@apply opacity-80 rounded-xl bg-gray-100 pb-4 relative max-w-sm md:max-w-3xl mx-auto px-8 grid grid-cols-12 grid-rows-2 items-center;
+	/*------ BTN ------*/
+	.btn {
+		@apply uppercase bg-green-600 text-white  transition duration-300 ease-linear font-bold inline-block tracking-header px-btnX py-btnY text-btn border-none cursor-pointer shadow-btn;
 	}
-	.next-game {
-		@apply col-span-5 row-span-2 text-xl font-bold flex flex-col justify-center items-start;
-	}
-	.team-vs {
-		@apply col-span-5 row-span-1 flex justify-center items-center gap-x-4;
-	}
-	.competition {
-		@apply row-span-1 col-span-5 flex justify-center items-center uppercase font-bold text-xl;
+	.btn:hover {
+		@apply text-green-600 bg-white;
 	}
 
-	.team-next {
-		@apply flex flex-col  items-center text-sm font-semibold;
-	}
-	.team-next img {
-		@apply w-14 h-14 rounded-full shadow-sm;
-	}
-	.empty {
-		@apply col-span-1 row-span-2;
-	}*/
-}
-
-.hero {
-	/* Sizing */
-	width: 100vw;
-	height: calc(100vh - 72px);
-
-	/* Flexbox stuff */
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	/* Text styles */
-	text-align: center;
-
-	/* Background styles */
-	background-image: url("./assets/homeheader.jpg");
-	background-size: cover;
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-}
-
-.child {
-	position: absolute;
-
-	transform: translate(-50%, -50%);
-}
-
-.box {
-	position: absolute;
-
-	transform: translate(-50%, -50%);
-	cursor: pointer;
-}
-
-.box span {
-	display: block;
-	animation: animate 1s infinite;
-}
-
-@keyframes animate {
-	0% {
-		opacity: 0;
-		transform: translateY(-10px);
-		/* transform: rotate(45deg) translate(-20px, -20px); */
+	/* --------- HERO HEADER --------- */
+	.hero {
+		@apply w-screen h-nav flex justify-center items-center text-center bg-cover bg-center bg-no-repeat bg-fixed bg-[url("./assets/homeheader.jpg")];
 	}
 
-	50% {
-		opacity: 0.5;
+	.child {
+		@apply absolute translate-x-[-50%] translate-y-[-50%];
+	}
+	.box {
+		@apply absolute translate-x-[-50%] translate-y-[-50%] cursor-pointer;
+	}
+	.box span {
+		@apply block animate-bounce opacity-50;
 	}
 
-	100% {
-		opacity: 0;
-		transform: translateY(10px);
-		/* transform: rotate(45deg) translate(20px, 20px); */
+	/* --------- CLASSEMENT --------- */
+
+	.ptable table {
+		@apply my-8 mx-auto;
 	}
-}
-
-/* TABLE */
-
-.ptable table {
-	margin: 30px auto;
-	border-collapse: collapse;
-}
-
-.ptable {
-	margin: 0px 0% 30px 0%;
-}
-
-th,
-td {
-	padding: 10px;
-	text-align: center;
-}
-
-/* table,
-th,
-td {
-	border: 1px solid black;
-} */
-
-th {
-	background-color: black;
-	color: white;
-}
-
-.wpos {
-	text-align: center;
-}
-
-.wpos td {
-	color: #000;
-	background-color: limegreen;
-}
-
-.pos {
-	text-align: center;
-}
-
-.pos td {
-	color: black;
-	background-color: tomato;
-}
-
-table .col {
-	border-bottom: 1px solid #ffffff;
-}
-
-.wpos:hover {
-	background-color: #77ff21;
-}
-
-.wpos:hover td {
-	color: #000000;
-}
-
-.pos:hover {
-	background-color: #ff7b21;
-}
-
-.pos:hover td {
-	color: #000000;
-}
-
-/* GRID TABLE x NEXT/LAST GAMES */
-
-/* NAVBAR */
-
-nav {
-	background: white;
-	box-shadow: var(--shadow-1);
-}
-
-.nav-header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem;
-}
-
-.nav-toggle {
-	font-size: 1.5rem;
-	color: var(--primary-500);
-	background: transparent;
-	border-color: transparent;
-	transition: var(--transition);
-}
-
-.nav-toggle:hover {
-	color: var(--primary-700);
-	transform: rotate(90deg);
-}
-
-.logo {
-	height: 40px;
-}
-
-.links a {
-	color: var(--grey-700);
-	font-size: 1rem;
-	text-transform: capitalize;
-	letter-spacing: var(--letterSpacing);
-	display: block;
-	padding: 0.5rem 1rem;
-	transition: var(--transition);
-}
-
-.links a:hover {
-	background: var(--primary-100);
-	color: var(--primary-500);
-	padding-left: 1.5rem;
-}
-
-.links-container {
-	overflow: hidden;
-	transition: var(--transition);
-}
-
-.social-icons {
-	display: none;
-}
-
-@media screen and (min-width: 800px) {
-	.nav-toggle {
-		display: none;
+	.promotion,
+	.relegation {
+		@apply text-center;
+	}
+	.promotion td {
+		@apply text-black bg-lime-400;
+	}
+	.relegation td {
+		@apply text-black bg-red-400;
 	}
 
-	.nav-header {
-		padding: 0;
-	}
+	/* --------- NAVBAR --------- */
 
 	.nav-center {
-		max-width: 1170px;
-		margin: 0 auto;
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1rem;
+		@apply nav:max-w-6xl nav:my-0 nav:mx-auto nav:flex nav:justify-between nav:items-center nav:p-4;
 	}
-
-	.links-container {
-		height: auto !important;
+	.nav-header {
+		@apply flex justify-between items-center p-4 nav:p-0;
+	}
+	.nav-toggle {
+		@apply text-nav text-black bg-transparent border-transparent transition delay-150 duration-300 ease-in-out nav:hidden;
+	}
+	.nav-toggle:hover {
+		@apply text-green-600 rotate-90;
+	}
+	.logo {
+		@apply h-10;
 	}
 
 	.links {
-		display: flex;
-		gap: 0.5rem;
+		@apply flex gap-2;
+	}
+	.links a {
+		@apply text-gray-700 text-linksNav capitalize tracking-wider block px-4 py-2 transition delay-150 duration-300 ease-in-out nav:p-0;
 	}
 
-	.links a {
-		padding: 0;
+	.links-container {
+		@apply transition delay-150 duration-300 ease-in-out overflow-hidden nav:!h-auto;
 	}
-	.links a:hover {
-		padding: 0;
-		background: transparent;
+
+	.nav-link {
+		@apply py-2 px-2 transition delay-150 duration-300 ease-in-out tracking-widest;
+	}
+	.nav-link:hover {
+		@apply text-orange-500;
 	}
 
 	.social-icons {
-		display: flex;
-		gap: 0.5rem;
+		@apply hidden nav:flex nav:gap-2;
 	}
 
 	.social-icons a {
-		color: var(--primary-500);
-		transition: var(--transition);
+		@apply text-black transition delay-150 duration-300 ease-in-out;
 	}
 
 	.social-icons a:hover {
-		color: var(--primary-300);
+		@apply opacity-80;
 	}
-}
-
-.nav-link {
-	padding: 0.5rem 0.5rem 0.5rem 0;
-	transition: var(--transition);
-	letter-spacing: 2px;
-}
-.nav-link:hover {
-	color: var(--primary-500);
 }

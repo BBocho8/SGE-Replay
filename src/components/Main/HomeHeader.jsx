@@ -1,8 +1,8 @@
 // import img from "../assets/homeheader.jpg"
-import GamesContainer from "./Game/GamesContainer"
+import GamesContainer from "../Game/GamesContainer"
 import { FiChevronDown } from "react-icons/fi"
 
-import { useGlobalContext } from "../context"
+import { useGlobalContext } from "../../context"
 
 const HomeHeader = () => {
 	const { games } = useGlobalContext()

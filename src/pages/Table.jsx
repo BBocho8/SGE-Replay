@@ -1,4 +1,4 @@
-import TableContainer from "../components/TableContainer"
+import TableContainer from "../components/Classement/TableContainer"
 import { useGlobalContext } from "../context"
 
 const Table = () => {

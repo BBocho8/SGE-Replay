@@ -1,5 +1,5 @@
-import LastGames from "../components/LastGames"
-import NextGames from "../components/NextGames"
+import LastGames from "../components/Game/LastGames"
+import NextGames from "../components/Game/NextGames"
 import { useGlobalContext } from "../context"
 
 const Results = () => {

@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context"
-import LastGames from "./LastGames"
-import NextGames from "./NextGames"
-import TableContainer from "./TableContainer"
+import LastGames from "./Game/LastGames"
+import NextGames from "./Game/NextGames"
+import TableContainer from "./Classement/TableContainer"
 
 const GridTableGames = () => {
 	const { games } = useGlobalContext()

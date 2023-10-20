@@ -1,6 +1,6 @@
 import AliceCarousel from "react-alice-carousel"
 import "react-alice-carousel/lib/alice-carousel.css"
-import GamesContainer from "./Game/GamesContainer"
+import GamesContainer from "./GamesContainer"
 import { nanoid } from "nanoid"
 
 const responsive = {

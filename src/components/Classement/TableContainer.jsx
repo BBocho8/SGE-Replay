@@ -38,7 +38,9 @@ const TableContainer = ({ table }) => {
 						return (
 							<tr
 								key={nanoid()}
-								className={`${isPromotion && "wpos"} ${isRelegation && "pos"} ${
+								className={`${isPromotion && "promotion"} ${
+									isRelegation && "relegation"
+								} ${
 									team === "SGE Mendig" &&
 									!isRelegation &&
 									!isPromotion &&
