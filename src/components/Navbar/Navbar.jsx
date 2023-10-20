@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { BsSearch } from "react-icons/bs"
 import logo from "../../assets/logo.png"
 
@@ -41,6 +41,7 @@ const social = [
 ]
 
 const Navbar = () => {
+	const navigate = useNavigate()
 	const [showLinks, setShowLinks] = useState(false)
 
 	const linkContainerRef = useRef(null)
@@ -60,7 +61,10 @@ const Navbar = () => {
 		<nav>
 			<div className="nav-center">
 				<div className="nav-header">
-					<div className="flex gap-x-2 items-center justify-center">
+					<div
+						className="flex gap-x-2 items-center justify-center cursor-pointer"
+						onClick={() => navigate("/")}
+					>
 						<img src={logo} alt="logo" className="logo" />
 
 						<p className="text-black font-bold">SG MENDIG REPLAY</p>
@@ -82,7 +86,7 @@ const Navbar = () => {
 									key={id}
 									to={url}
 									style={({ isActive }) => ({
-										color: isActive ? "rgb(249 115 22)" : "rgb(17 24 39)",
+										color: isActive ? "#15A34A" : "rgb(17 24 39)",
 										textTransform: "capitalize",
 										padding: "0.5rem 0.5rem 0.5rem 0",
 										letterSpacing: "2px",

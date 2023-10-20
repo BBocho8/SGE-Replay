@@ -26,7 +26,6 @@ const Replay = () => {
 					secondHalf3,
 					fullGame,
 				} = game
-				console.log(game)
 				return (
 					<div key={id} className="my-8 mx-auto flex flex-col items-center">
 						<p className="font-semibold text-xl">
