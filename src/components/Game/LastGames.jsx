@@ -18,7 +18,7 @@ const responsive = {
 
 const LastGames = ({ isResult, isHomepage, games }) => (
 	<div className="py-4">
-		<h2 className="text-center text-4xl font-bold py-4">LAST RESULTS</h2>
+		<h2 className="text-center uppercase">LAST RESULTS</h2>
 		<AliceCarousel
 			mouseTracking
 			items={games.map((game) => {

@@ -1,0 +1,12 @@
+const getYoutubeID = (url) => {
+	let str = url
+
+	if (typeof str === "string") {
+		str = str.split("?")[0].split("/").reverse()[0]
+
+		return `https://i.ytimg.com/vi/${str}/maxresdefault.jpg`
+	}
+	console.log("Variable needs to be a string")
+}
+
+export default getYoutubeID

@@ -3,9 +3,8 @@ import { nanoid } from "nanoid"
 const TableContainer = ({ table }) => {
 	return (
 		<div className="ptable ">
-			<h1 className="text-black font-bold text-2xl text-center">
-				BEZIRKSLIGA MITTE HERREN
-			</h1>
+			<h1 className=" text-h2 text-center uppercase">BEZIRKSLIGA MITTE</h1>
+			<h3 className="text-center mb-0">League Table</h3>
 			<table className="border border-gray-200">
 				<thead>
 					<tr className="col">

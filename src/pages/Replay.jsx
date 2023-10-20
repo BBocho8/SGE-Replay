@@ -1,12 +1,13 @@
+import GamesContainer from "../components/Video/GamesContainer"
 import { useGlobalContext } from "../context"
 
 const Replay = () => {
 	const { videoGames } = useGlobalContext()
 	return (
 		<section>
-			<h1 className="text-center text-3xl font-bold uppercase">
-				All Full Game Replay
-			</h1>
+			<h1 className="text-center text-h2 uppercase">All Full Game Replay</h1>
+
+			<GamesContainer />
 			{videoGames.map((game) => {
 				const {
 					id,

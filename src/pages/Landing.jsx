@@ -1,8 +1,14 @@
-import Footer from "../components/Footer"
+import getYoutubeID from "../../utils/getYoutubeID"
 import GridTableGames from "../components/GridTableGames"
 import HomeHeader from "../components/HomeHeader"
 
 const Landing = () => {
+	const url = "https://www.youtube.com/embed/WuPkwlBQORo?si=ZyVw3GW44GKAJWlX"
+
+	const ytid = getYoutubeID(url)
+
+	console.log(ytid)
+
 	return (
 		<div className="overflow-hidden">
 			<HomeHeader />
@@ -15,7 +21,6 @@ const Landing = () => {
 			<button type="button" className="btn">
 				SEND ME PACKING
 			</button>
-			<Footer />
 		</div>
 	)
 }

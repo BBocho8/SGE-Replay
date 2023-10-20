@@ -7,13 +7,16 @@ export default {
 			boxShadow: {
 				btn: "0 1px 3px rgba(0, 0, 0, 0.2)",
 			},
+			colors: {
+				primaryGreen: "#15A34A",
+			},
 			fontFamily: {
 				sans: ['"Roboto"', ...defaultTheme.fontFamily.sans],
 			},
 			fontSize: {
 				nav: "1.5rem",
 				linksNav: "1rem",
-				h1: "3rem",
+				h1: "2.5rem",
 				h2: "2rem",
 				h3: "1.5rem",
 				h4: "0.875rem",
@@ -32,7 +35,7 @@ export default {
 				nav: "calc(100vh - 72px)",
 			},
 			letterSpacing: {
-				header: "0.25rem",
+				header: "0.10rem",
 				btn: "0.25rem",
 			},
 			padding: {

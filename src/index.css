@@ -43,10 +43,10 @@
 @layer components {
 	/*------ BTN ------*/
 	.btn {
-		@apply uppercase bg-green-600 text-white  transition duration-300 ease-linear font-bold inline-block tracking-header px-btnX py-btnY text-btn border-none cursor-pointer shadow-btn;
+		@apply uppercase bg-primaryGreen text-white  transition duration-300 ease-linear font-bold inline-block tracking-header px-btnX py-btnY text-btn cursor-pointer shadow-btn rounded-md;
 	}
 	.btn:hover {
-		@apply text-green-600 bg-white;
+		@apply text-white bg-opacity-75 border rounded-md border-primaryGreen;
 	}
 
 	/* --------- HERO HEADER --------- */
