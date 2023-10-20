@@ -1,11 +1,51 @@
+import { useEffect, useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
 import { useGlobalContext } from "../context"
 
 const Replay = () => {
 	const { videoGames } = useGlobalContext()
+	const [games, setGames] = useState([])
+
+	const [isCompetition, setIsCompetition] = useState("all")
+
+	const competitions = [
+		"Kreisfreundschaftsspiele",
+		"Bezirksliga",
+		"Rheinlandpokal",
+	]
+
+	const filterGames = (competition) => {
+		// setIsCompetition(competition)
+		// const newGames = videoGames.filter(
+		// 	(game) => game.competition === isCompetition
+		// )
+		// setGames(newGames)
+	}
+
+	const resetGames = () => {
+		// setIsCompetition("all")
+		// setGames(videoGames)
+	}
+
 	return (
 		<section>
-			<h1 className="text-center text-h2 uppercase">All Full Game ReplaysÒ</h1>
+			<h1 className="text-center text-h2 uppercase">All Full Game Replays</h1>
+			<div className="flex justify-center items-center gap-2 flex-wrap">
+				{competitions.map((competition) => {
+					return (
+						<button
+							onClick={() => filterGames(competition)}
+							className="btn"
+							key={competition}
+						>
+							{competition}
+						</button>
+					)
+				})}
+				<button className="btn" onClick={() => resetGames}>
+					ALL GAMES
+				</button>
+			</div>
 
 			<GamesContainer />
 			{videoGames.map((game) => {
