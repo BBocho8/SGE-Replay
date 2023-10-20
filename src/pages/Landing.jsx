@@ -1,5 +1,5 @@
 import GridTableGames from "../components/GridTableGames"
-import HomeHeader from "../components/main/HomeHeader"
+import HomeHeader from "../components/Main/HomeHeader"
 import Footer from "../components/footer/Footer"
 
 const Landing = () => {
