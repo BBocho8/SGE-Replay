@@ -20,7 +20,7 @@ const GridTableGames = () => {
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			</div>
-			<div className="mx-8 col-span-4 row-span-2 my-auto">
+			<div className="mx-1 xl:px-0 xl:mx-8 xl:col-span-4 xl:row-span-2 xl:my-auto">
 				<TableContainer table={table} />
 			</div>
 		</section>

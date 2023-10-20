@@ -8,7 +8,7 @@ const Table = () => {
 	}
 	const { table } = games.data
 	return (
-		<div>
+		<div className="mx-1 nav:mx-0">
 			<TableContainer table={table} />
 		</div>
 	)
