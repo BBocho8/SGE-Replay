@@ -5,7 +5,7 @@ const HomeLayout = () => {
 	return (
 		<div className="">
 			<Navbar />
-			<div className="pb-[56px]">
+			<div className="nav:pb-[56px]">
 				<Outlet />
 			</div>
 			<div className="nav:hidden ">
