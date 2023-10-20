@@ -5,7 +5,7 @@ const Replay = () => {
 	return (
 		<section>
 			<h1 className="text-center text-3xl font-bold uppercase">
-				All full Game Replay
+				All Full Game Replay
 			</h1>
 			{videoGames.map((game) => {
 				const {
