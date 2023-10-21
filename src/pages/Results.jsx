@@ -10,9 +10,13 @@ const Results = () => {
 	const { prevGames, nextGames } = games.data
 	return (
 		<div>
-			<LastGames isResult={true} isHomepage={false} games={prevGames} />
+			<div className="my-2">
+				<LastGames isResult={true} isHomepage={false} games={prevGames} />
+			</div>
 
-			<NextGames isResult={false} isHomepage={false} games={nextGames} />
+			<div className="my-8">
+				<NextGames isResult={false} isHomepage={false} games={nextGames} />
+			</div>
 		</div>
 	)
 }
