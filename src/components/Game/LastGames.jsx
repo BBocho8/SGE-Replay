@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css"
 const settings = {
 	dots: true,
 	infinite: true,
+	dotsClass: "slick-dots bottom-[-30px] sm:bottom-0",
 	speed: 1000,
 	slidesToShow: 1,
 	slidesToScroll: 1,
