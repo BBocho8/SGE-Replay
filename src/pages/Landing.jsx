@@ -10,10 +10,6 @@ const Landing = () => {
 			</div>
 
 			<p>FB x INSTA FEED x SPONSORS</p>
-
-			<button type="button" className="btn">
-				SEND ME PACKING
-			</button>
 		</div>
 	)
 }

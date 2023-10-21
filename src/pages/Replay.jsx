@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
 import { useGlobalContext } from "../context"
+import { sortVideoGames } from "../../utils/sortGames"
 
 const Replay = () => {
 	const { videoGames } = useGlobalContext()
-	const [games, setGames] = useState([])
+
+	const sortedGames = sortVideoGames(videoGames)
 
 	const [isCompetition, setIsCompetition] = useState("all")
 
@@ -14,19 +16,6 @@ const Replay = () => {
 		"Rheinlandpokal",
 	]
 
-	const filterGames = (competition) => {
-		// setIsCompetition(competition)
-		// const newGames = videoGames.filter(
-		// 	(game) => game.competition === isCompetition
-		// )
-		// setGames(newGames)
-	}
-
-	const resetGames = () => {
-		// setIsCompetition("all")
-		// setGames(videoGames)
-	}
-
 	return (
 		<section>
 			<h1 className="text-center text-h2 uppercase">All Full Game Replays</h1>
@@ -34,86 +23,83 @@ const Replay = () => {
 				{competitions.map((competition) => {
 					return (
 						<button
-							onClick={() => filterGames(competition)}
-							className="btn"
+							onClick={() => setIsCompetition(competition)}
+							className={isCompetition === competition ? "btn bg-black" : "btn"}
 							key={competition}
 						>
 							{competition}
 						</button>
 					)
 				})}
-				<button className="btn" onClick={() => resetGames}>
+				<button
+					className={isCompetition === "all" ? "btn bg-black" : "btn"}
+					onClick={() => setIsCompetition("all")}
+				>
 					ALL GAMES
 				</button>
 			</div>
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center px-8 gap-x-2">
+				{isCompetition === "all"
+					? sortedGames.map((game) => {
+							const {
+								id,
+								isVideoAvailable,
 
-			<GamesContainer />
-			{videoGames.map((game) => {
-				const {
-					id,
-					isVideoAvailable,
-					gameInfo,
-					competition,
-					homeTeam,
-					awayTeam,
-					homeScore,
-					awayScore,
-					date,
-					firstHalf1,
-					firstHalf2,
-					firstHalf3,
-					secondHalf1,
-					secondHalf2,
-					secondHalf3,
-					fullGame,
-				} = game
-				return (
-					<div key={id} className="my-8 mx-auto flex flex-col items-center">
-						<p className="font-semibold text-xl">
-							{homeTeam} VS {awayTeam}
-						</p>
-						{!isVideoAvailable && (
-							<p className="text-blue-800">Game is not yet available</p>
-						)}
-						{firstHalf1 && (
-							<iframe
-								src={firstHalf1}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}{" "}
-						{firstHalf2 && (
-							<iframe
-								src={firstHalf2}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}
-						{secondHalf1 && (
-							<iframe
-								src={secondHalf1}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}{" "}
-						{secondHalf2 && (
-							<iframe
-								src={secondHalf2}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}
-						{secondHalf3 && (
-							<iframe
-								src={secondHalf3}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}{" "}
-						{fullGame && (
-							<iframe
-								src={fullGame}
-								className="w-4/5 h-auto aspect-video my-2"
-							></iframe>
-						)}
-					</div>
-				)
-			})}
+								competition,
+								homeTeam,
+								awayTeam,
+
+								date,
+								firstHalf1,
+
+								fullGame,
+							} = game
+							return (
+								<GamesContainer
+									key={game.id}
+									id={id}
+									isVideoAvailable={isVideoAvailable}
+									competition={competition}
+									homeTeam={homeTeam}
+									awayTeam={awayTeam}
+									date={date}
+									firstHalf1={firstHalf1}
+									fullGame={fullGame}
+								/>
+							)
+							// eslint-disable-next-line no-mixed-spaces-and-tabs
+					  })
+					: sortedGames
+							.filter((game) => game.competition === isCompetition)
+							.map((game) => {
+								const {
+									id,
+									isVideoAvailable,
+
+									competition,
+									homeTeam,
+									awayTeam,
+
+									date,
+									firstHalf1,
+
+									fullGame,
+								} = game
+								return (
+									<GamesContainer
+										key={game.id}
+										id={id}
+										isVideoAvailable={isVideoAvailable}
+										competition={competition}
+										homeTeam={homeTeam}
+										awayTeam={awayTeam}
+										date={date}
+										firstHalf1={firstHalf1}
+										fullGame={fullGame}
+									/>
+								)
+							})}
+			</div>
 		</section>
 	)
 }

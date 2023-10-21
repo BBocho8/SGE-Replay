@@ -18,7 +18,7 @@ const responsive = {
 
 const NextGames = ({ isResult, isHomepage, games }) => {
 	return (
-		<div className="py-4">
+		<div className="py-4 px-2 sm:px-0">
 			<h2 className="text-center uppercase">NEXT GAMES</h2>
 			<AliceCarousel
 				mouseTracking

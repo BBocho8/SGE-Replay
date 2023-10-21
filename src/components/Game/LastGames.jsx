@@ -16,8 +16,12 @@ const responsive = {
 	},
 }
 
+function prevent(e) {
+	e.preventDefault()
+}
+
 const LastGames = ({ isResult, isHomepage, games }) => (
-	<div className="py-4">
+	<div className="py-4 px-2 sm:px-0">
 		<h2 className="text-center uppercase">LAST RESULTS</h2>
 		<AliceCarousel
 			mouseTracking
@@ -28,12 +32,13 @@ const LastGames = ({ isResult, isHomepage, games }) => (
 						isResult={isResult}
 						isHomepage={isHomepage}
 						{...game}
+						onDragStart={prevent}
 					/>
 				)
 			})}
 			responsive={responsive}
 			autoPlay
-			autoPlayStrategy="none"
+			autoPlayStrategy="default"
 			autoPlayInterval={3000}
 			animationDuration={2000}
 			animationEasingFunction="ease"
