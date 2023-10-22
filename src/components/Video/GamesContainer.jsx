@@ -29,7 +29,7 @@ const GamesContainer = ({
 					) : (
 						<img src={gameImg} alt={`${homeTeam} ${awayTeam} ${competition}`} />
 					)}
-					<div className="flex flex-col items-center justify-center my-2">
+					<div className="flex flex-col items-center justify-center my-3">
 						<p className="font-bold">{competition}</p>
 						<p>
 							{homeTeam} vs {awayTeam}
