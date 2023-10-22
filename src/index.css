@@ -41,6 +41,13 @@
 }
 
 @layer components {
+	.pagination-div-next {
+		@apply flex justify-center items-center pt-6 gap-x-4;
+	}
+	.pagination-div-last {
+		@apply flex justify-center items-center pt-6 gap-x-4;
+	}
+
 	/*------ BTN ------*/
 	.btn {
 		@apply uppercase bg-primaryGreen text-white  transition duration-300 ease-linear font-bold inline-block tracking-header px-btnX py-btnY text-btn cursor-pointer shadow-btn rounded-md;
@@ -127,4 +134,16 @@
 	.social-icons a:hover {
 		@apply opacity-80;
 	}
+}
+/* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+	background-color: #15a34a;
+	opacity: 1;
+	transform: scale(1.25);
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+	background-color: grey;
+	opacity: 0.8;
 }
