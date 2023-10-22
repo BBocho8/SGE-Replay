@@ -1,4 +1,3 @@
-import "react-alice-carousel/lib/alice-carousel.css"
 import GamesContainer from "./GamesContainer"
 import { nanoid } from "nanoid"
 
