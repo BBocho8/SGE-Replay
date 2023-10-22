@@ -7,8 +7,6 @@ import Slider from "react-slick"
 const settings = {
 	dots: true,
 	infinite: true,
-	dotsClass: "slick-dots bottom-[-30px] sm:bottom-0",
-
 	speed: 1000,
 	slidesToShow: 1,
 	slidesToScroll: 1,

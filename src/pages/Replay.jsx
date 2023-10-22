@@ -5,10 +5,13 @@ import { sortVideoGames } from "../../utils/sortGames"
 
 const Replay = () => {
 	const { videoGames } = useGlobalContext()
+	const [isCompetition, setIsCompetition] = useState("all")
+
+	if (!videoGames) {
+		return <h2>Loading...</h2>
+	}
 
 	const sortedGames = sortVideoGames(videoGames)
-
-	const [isCompetition, setIsCompetition] = useState("all")
 
 	const competitions = [
 		"Kreisfreundschaftsspiele",
