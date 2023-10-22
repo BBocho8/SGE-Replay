@@ -1,7 +1,6 @@
 import GamesContainer from "./GamesContainer"
 import { nanoid } from "nanoid"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules"
 
 import { Swiper, SwiperSlide } from "swiper/react"
