@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom"
 import Navbar from "../components/Navbar/Navbar"
 import BottomNav from "../components/BottomNav"
-import Footer from "../components/Footer"
+import FooterPage from "../components/Footer"
 const HomeLayout = () => {
 	return (
 		<div className="">
-			<div className="pb-[56px]">
+			{/* 56px = size bottom nav && 73px = size footer */}
+			<div className="pb-[56px] nav:pb-[73px]">
 				<Navbar />
 				<Outlet />
-				<Footer />
+				<div className="hidden nav:block nav:absolute nav:bottom-0 nav:w-full ">
+					<FooterPage />
+				</div>
 			</div>
 			<div className="nav:hidden ">
 				<BottomNav />

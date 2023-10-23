@@ -22,7 +22,7 @@ const BottomNav = () => {
 	return (
 		<ThemeProvider theme={theme}>
 			<BottomNavigation
-				sx={{ width: "100%", position: "fixed", bottom: 0 }}
+				sx={{ width: "100%", position: "fixed", bottom: 0, zIndex: 100 }}
 				value={btnValue}
 				onChange={(event, value) => setBtnValue(value)}
 				showLabels
