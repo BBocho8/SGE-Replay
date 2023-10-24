@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
 import { NavLink, useNavigate } from "react-router-dom"
-import { BsSearch } from "react-icons/bs"
 import logo from "../../assets/logo.png"
 
 const links = [
@@ -109,7 +108,6 @@ const Navbar = () => {
 							</li>
 						)
 					})}
-					<BsSearch />
 				</ul>
 			</div>
 		</nav>

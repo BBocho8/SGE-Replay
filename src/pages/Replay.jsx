@@ -3,9 +3,24 @@ import GamesContainer from "../components/Video/GamesContainer"
 import { useGlobalContext } from "../context"
 import { sortVideoGames } from "../../utils/sortGames"
 
+const getFilteredItems = (query, items) => {
+	if (!query) {
+		return items
+	}
+	if (query.length > 3) {
+		return items.filter((game) => {
+			const { homeTeam, awayTeam } = game
+			const match = homeTeam.concat(" ", awayTeam)
+
+			return match.includes(query)
+		})
+	}
+}
+
 const Replay = () => {
 	const { videoGames } = useGlobalContext()
 	const [isCompetition, setIsCompetition] = useState("all")
+	const [query, setQuery] = useState("")
 
 	if (!videoGames) {
 		return <h2>Loading...</h2>
@@ -13,11 +28,15 @@ const Replay = () => {
 
 	const sortedGames = sortVideoGames(videoGames)
 
+	const filteredItems = getFilteredItems(query, videoGames)
+
 	const competitions = [
 		"Kreisfreundschaftsspiele",
 		"Bezirksliga",
 		"Rheinlandpokal",
 	]
+
+	console.log(query)
 
 	return (
 		<section>
@@ -41,6 +60,24 @@ const Replay = () => {
 					ALL GAMES
 				</button>
 			</div>
+			{/* <input
+				type="search"
+				name="search"
+				id="search"
+				onChange={(e) => setQuery(e.target.value)}
+				placeholder="Search for a game"
+				className="border-primaryGreen placeholder:text-black placeholder:opacity-70 focus:border-primaryGreen focus:ring-primaryGreen rounded-sm"
+			/>
+
+			<ul>
+				{query.length > 3 &&
+					filteredItems.map((game) => (
+						<p key={game.id}>
+							{game.homeTeam} - {game.awayTeam}
+						</p>
+					))}
+			</ul> */}
+
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center px-8 gap-x-2">
 				{isCompetition === "all"
 					? sortedGames.map((game) => {
