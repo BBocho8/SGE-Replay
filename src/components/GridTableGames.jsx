@@ -16,17 +16,17 @@ const GridTableGames = () => {
 	const { prevGames, nextGames, table } = games.data
 
 	return (
-		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-2 xl:max-w-screen-2xl ">
-			<div className="mx-4 xl:px-0 xl:col-span-8 xl:row-span-2 xl:my-auto">
-				<div className="my-8 sm:my-0">
+		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-4 xl:max-w-screen-xl xl:py-12 xl:mx-auto ">
+			<div className="mx-4 xl:px-0 xl:col-span-6 xl:row-span-4 xl:my-auto">
+				<div className="my-8 sm:my-0 ">
 					<LastGames isResult={true} isHomepage={false} games={prevGames} />
 				</div>
-				<div className="my-8 sm:my-0">
+				<div className="my-8 sm:my-0 ">
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			</div>
-			<div className="my-8 sm:my-0 mx-1 xl:px-0 xl:mx-8 xl:col-span-4 xl:row-span-2 xl:my-auto">
-				<TableContainer table={table} />
+			<div className="my-8 sm:my-0 mx-1 xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto  ">
+				<TableContainer table={table} isHomepage={true} />
 			</div>
 		</section>
 	)

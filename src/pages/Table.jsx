@@ -14,7 +14,7 @@ const Table = () => {
 	const { table } = games.data
 	return (
 		<div className="mx-1 nav:mx-0">
-			<TableContainer table={table} />
+			<TableContainer table={table} isHomepage={false} />
 		</div>
 	)
 }
