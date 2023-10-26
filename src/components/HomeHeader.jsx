@@ -9,7 +9,7 @@ const HomeHeader = () => {
 		return (
 			<div className=" hero relative object-cover">
 				<div className="w-4/5 md:w-full md:mx-0 child top-[50%] left-[50%] md:top-[70%] ">
-					<div className="opacity-80 rounded-xl bg-gray-100  pt-4 md:pt-0 pb-4 relative max-w-sm md:max-w-3xl mx-auto px-8 md:grid md:grid-cols-12 md:grid-rows-2 md:items-center">
+					<div className="opacity-80 rounded-xl bg-gray-100  pt-4 md:pt-0 pb-4 relative max-w-sm md:max-w-3xl mx-auto px-8 ">
 						<div className="flex flex-col items-center justify-center gap-y-4">
 							<p className="uppercase text-xl font-bold">Next game</p>
 							<LoadingSpinner />
