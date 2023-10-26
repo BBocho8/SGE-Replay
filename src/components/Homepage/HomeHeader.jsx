@@ -15,7 +15,6 @@ const HomeHeader = () => {
 							<LoadingSpinner />
 						</div>
 					</div>
-					{/* <GamesContainer isHomepage={true} isResult={false} {...nextGames[0]} /> */}
 				</div>
 
 				<div className="box top-[75%] left-[50%] md:top-[92%] ">
