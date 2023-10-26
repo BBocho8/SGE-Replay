@@ -1,7 +1,8 @@
 import { Outlet } from "react-router-dom"
-import Navbar from "../components/Navbar/Navbar"
-import BottomNav from "../components/BottomNav"
-import FooterPage from "../components/Footer"
+import Navbar from "../components/Main/Navbar"
+import FooterPage from "../components/Main/Footer"
+import BottomNav from "../components/Main/BottomNav"
+
 const HomeLayout = () => {
 	return (
 		<div className="">

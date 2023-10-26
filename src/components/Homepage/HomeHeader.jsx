@@ -1,7 +1,7 @@
-import GamesContainer from "./Game/GamesContainer"
+import GamesContainer from "../Game/GamesContainer"
 import { FiChevronDown } from "react-icons/fi"
-import LoadingSpinner from "./LoadingSpinner"
-import { useGlobalContext } from "../context"
+import LoadingSpinner from "../LoadingSpinner"
+import { useGlobalContext } from "../../context"
 
 const HomeHeader = () => {
 	const { games } = useGlobalContext()

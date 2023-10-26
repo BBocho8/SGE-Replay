@@ -16,10 +16,18 @@ const FooterPage = () => {
 				<Link to="/results">Results</Link>
 			</Footer.LinkGroup>
 			<div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center text-black">
-				<Link to="https://www.facebook.com/SGEintrachtMendigBell">
+				<Link
+					to="https://www.facebook.com/SGEintrachtMendigBell"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<BsFacebook className="w-5 h-5 hover:opacity-70" />
 				</Link>
-				<Link to="https://www.instagram.com/sgeintrachtmendigbell/">
+				<Link
+					to="https://www.instagram.com/sgeintrachtmendigbell/"
+					target="_blank"
+					rel="noreferrer"
+				>
 					<BsInstagram className="w-5 h-5 hover:opacity-70" />
 				</Link>
 			</div>

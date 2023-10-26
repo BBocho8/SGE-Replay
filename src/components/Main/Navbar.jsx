@@ -1,7 +1,7 @@
 import { useRef, useState } from "react"
 import { FaBars } from "react-icons/fa"
 import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { NavLink, useNavigate } from "react-router-dom"
+import { Link, NavLink, useNavigate } from "react-router-dom"
 import logo from "../../assets/logo.png"
 
 const links = [
@@ -30,12 +30,12 @@ const social = [
 	{
 		id: 1,
 		url: "https://www.facebook.com/SGEintrachtMendigBell",
-		icon: <FaFacebook />,
+		icon: <FaFacebook className="h-5  w-5 hover:opacity-80" />,
 	},
 	{
 		id: 2,
 		url: "https://www.instagram.com/sgeintrachtmendigbell/",
-		icon: <FaInstagram />,
+		icon: <FaInstagram className="h-5  w-5 hover:opacity-80" />,
 	},
 ]
 
@@ -104,7 +104,9 @@ const Navbar = () => {
 						const { id, url, icon } = socialIcon
 						return (
 							<li key={id}>
-								<a href={url}>{icon}</a>
+								<Link href={url} target="_blank" rel="noreferrer">
+									{icon}
+								</Link>
 							</li>
 						)
 					})}
