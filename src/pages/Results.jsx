@@ -2,13 +2,18 @@ import { useState } from "react"
 import LastGames from "../components/Game/LastGames"
 import NextGames from "../components/Game/NextGames"
 import { useGlobalContext } from "../context"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 const Results = () => {
 	const { games } = useGlobalContext()
 	const [isResultsOpen, setIsResultsOpen] = useState(true)
 
 	if (!games.data) {
-		return <h2>Loading...</h2>
+		return (
+			<div className="flex-center">
+				<LoadingSpinner />
+			</div>
+		)
 	}
 	const { prevGames, nextGames } = games.data
 	return (

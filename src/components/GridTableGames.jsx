@@ -2,11 +2,16 @@ import { useGlobalContext } from "../context"
 import LastGames from "./Game/LastGames"
 import NextGames from "./Game/NextGames"
 import TableContainer from "./Classement/TableContainer"
+import LoadingSpinner from "./LoadingSpinner"
 
 const GridTableGames = () => {
 	const { games } = useGlobalContext()
 	if (!games.data) {
-		return <h2>Loading...</h2>
+		return (
+			<div className="flex-center">
+				<LoadingSpinner />
+			</div>
+		)
 	}
 	const { prevGames, nextGames, table } = games.data
 

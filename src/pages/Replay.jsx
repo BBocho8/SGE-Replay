@@ -2,18 +2,24 @@ import { useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
 import { useGlobalContext } from "../context"
 import { sortVideoGames } from "../../utils/sortGames"
+import removeAccents from "remove-accents"
+import { Link } from "react-router-dom"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 const getFilteredItems = (query, items) => {
 	if (!query) {
 		return items
 	}
-	if (query.length > 3) {
-		return items.filter((game) => {
-			const { homeTeam, awayTeam } = game
-			const match = homeTeam.concat(" ", awayTeam)
-
-			return match.includes(query)
-		})
+	if (query.length > 2) {
+		return items.filter(
+			(game) =>
+				removeAccents(game.homeTeam.toLowerCase()).includes(
+					`${removeAccents(query.toLowerCase())}`
+				) ||
+				removeAccents(game.awayTeam.toLowerCase()).includes(
+					`${removeAccents(query.toLowerCase())}`
+				)
+		)
 	}
 }
 
@@ -23,7 +29,11 @@ const Replay = () => {
 	const [query, setQuery] = useState("")
 
 	if (!videoGames) {
-		return <h2>Loading...</h2>
+		return (
+			<div className="flex-center">
+				<LoadingSpinner />
+			</div>
+		)
 	}
 
 	const sortedGames = sortVideoGames(videoGames)
@@ -35,8 +45,6 @@ const Replay = () => {
 		"Bezirksliga",
 		"Rheinlandpokal",
 	]
-
-	console.log(query)
 
 	return (
 		<section>
@@ -60,23 +68,27 @@ const Replay = () => {
 					ALL GAMES
 				</button>
 			</div>
-			{/* <input
-				type="search"
-				name="search"
-				id="search"
-				onChange={(e) => setQuery(e.target.value)}
-				placeholder="Search for a game"
-				className="border-primaryGreen placeholder:text-black placeholder:opacity-70 focus:border-primaryGreen focus:ring-primaryGreen rounded-sm"
-			/>
+			<div className="flex flex-col gap-y-2 justify-center items-center py-4">
+				<input
+					type="search"
+					name="search"
+					id="search"
+					onChange={(e) => setQuery(e.target.value)}
+					placeholder="Search for a game"
+					className="border-primaryGreen placeholder:text-black placeholder:opacity-70 focus:border-primaryGreen focus:ring-primaryGreen rounded-sm"
+				/>
 
-			<ul>
-				{query.length > 3 &&
-					filteredItems.map((game) => (
-						<p key={game.id}>
-							{game.homeTeam} - {game.awayTeam}
-						</p>
-					))}
-			</ul> */}
+				<ul className="overflow-y-auto max-h-52">
+					{query.length > 2 &&
+						filteredItems.map((game) => (
+							<Link key={game.id} to={`/replay/${game.id}`}>
+								<p className="bg-white text-black px-4 py-2 hover:bg-gray-300 border ">
+									{game.homeTeam} - {game.awayTeam}
+								</p>
+							</Link>
+						))}
+				</ul>
+			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center px-8 gap-x-2">
 				{isCompetition === "all"

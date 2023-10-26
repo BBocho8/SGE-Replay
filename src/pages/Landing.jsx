@@ -8,8 +8,6 @@ const Landing = () => {
 			<div id="content">
 				<GridTableGames />
 			</div>
-
-			<p>FB x INSTA FEED x SPONSORS</p>
 		</div>
 	)
 }

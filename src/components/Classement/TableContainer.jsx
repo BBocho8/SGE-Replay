@@ -67,7 +67,7 @@ const TableContainer = ({ table }) => {
 										alt={team}
 										className={team === "SGE Mendig" ? "h-10 w-10" : "h-8 w-8"}
 									/>{" "}
-									{team}
+									<p className="text-center">{team}</p>
 								</td>
 								<td
 									className={

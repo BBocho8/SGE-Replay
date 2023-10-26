@@ -1,10 +1,15 @@
 import TableContainer from "../components/Classement/TableContainer"
+import LoadingSpinner from "../components/LoadingSpinner"
 import { useGlobalContext } from "../context"
 
 const Table = () => {
 	const { games } = useGlobalContext()
 	if (!games.data) {
-		return <h2>Loading...</h2>
+		return (
+			<div className="flex-center">
+				<LoadingSpinner />
+			</div>
+		)
 	}
 	const { table } = games.data
 	return (
