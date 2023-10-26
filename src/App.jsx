@@ -6,6 +6,7 @@ import {
 	Replay,
 	ReplayDetails,
 	HomeLayout,
+	Error,
 } from "./pages"
 import useFetchGames from "../utils/fetchGames"
 import useFetchVideoGames from "../utils/fetchVideoGames"
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <HomeLayout />,
+		errorElement: <Error />,
 
 		children: [
 			{

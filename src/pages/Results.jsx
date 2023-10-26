@@ -36,22 +36,14 @@ const Results = () => {
 			</div>
 
 			{isResultsOpen ? (
-				<div className="my-2">
+				<div className="py-2">
 					<LastGames isResult={true} isHomepage={false} games={prevGames} />
 				</div>
 			) : (
-				<div className="my-8">
+				<div className="py-2">
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			)}
-
-			{/* <div className="my-2">
-				<LastGames isResult={true} isHomepage={false} games={prevGames} />
-			</div>
-
-			<div className="my-8">
-				<NextGames isResult={false} isHomepage={false} games={nextGames} />
-			</div> */}
 		</div>
 	)
 }
