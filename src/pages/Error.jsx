@@ -26,14 +26,3 @@ const Error = () => {
 	return <p>Something went wrong</p>
 }
 export default Error
-
-// p {
-//   line-height: 1.5;
-//   margin-top: 0.5rem;
-//   margin-bottom: 1rem;
-//   color: var(--grey-500);
-// }
-// a {
-//   color: var(--primary-500);
-//   text-transform: capitalize;
-// }

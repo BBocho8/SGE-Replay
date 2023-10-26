@@ -3,6 +3,7 @@ import { useGlobalContext } from "../context"
 import { useState } from "react"
 import { nanoid } from "nanoid"
 import { getFormattedDate, getFormattedTime } from "../../utils/formatDate"
+import LoadingSpinner from "../components/LoadingSpinner"
 
 const ReplayDetails = () => {
 	const [gamePart, setGamePart] = useState("")
@@ -16,7 +17,11 @@ const ReplayDetails = () => {
 		}
 	})
 	if (!game) {
-		return <h2>Match is loading</h2>
+		return (
+			<div className="flex-center my-4">
+				<LoadingSpinner />
+			</div>
+		)
 	}
 
 	const {
