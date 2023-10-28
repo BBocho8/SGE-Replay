@@ -1,5 +1,4 @@
-import { useParams } from "react-router-dom"
-import { useGlobalContext } from "../context"
+import { useLoaderData, useParams } from "react-router-dom"
 import { useState } from "react"
 import { nanoid } from "nanoid"
 import { getFormattedDate, getFormattedTime } from "../../utils/formatDate"
@@ -10,7 +9,9 @@ const ReplayDetails = () => {
 	const [isResultOpen, setIsResultOpen] = useState(false)
 
 	const { gameID } = useParams()
-	const { videoGames } = useGlobalContext()
+	const { videoGames: data } = useLoaderData()
+	const { videoGames } = data
+
 	const game = videoGames?.find((videoGame) => {
 		if (gameID === videoGame?.id) {
 			return videoGame

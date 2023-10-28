@@ -2,18 +2,18 @@ import LastGames from "../Game/LastGames"
 import NextGames from "../Game/NextGames"
 import TableContainer from "../Classement/TableContainer"
 import LoadingSpinner from "../LoadingSpinner"
-import { useGlobalContext } from "../../context"
+import { useLoaderData } from "react-router-dom"
 
 const GridTableGames = () => {
-	const { games } = useGlobalContext()
-	if (!games.data) {
+	const { games, prevGames, nextGames, table } = useLoaderData()
+
+	if (!games) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />
 			</div>
 		)
 	}
-	const { prevGames, nextGames, table } = games.data
 
 	return (
 		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-4 xl:max-w-screen-xl xl:py-12 xl:mx-auto ">

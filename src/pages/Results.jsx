@@ -1,21 +1,21 @@
 import { useState } from "react"
 import LastGames from "../components/Game/LastGames"
 import NextGames from "../components/Game/NextGames"
-import { useGlobalContext } from "../context"
 import LoadingSpinner from "../components/LoadingSpinner"
+import { useLoaderData } from "react-router-dom"
 
 const Results = () => {
-	const { games } = useGlobalContext()
+	const { games, prevGames, nextGames } = useLoaderData()
+
 	const [isResultsOpen, setIsResultsOpen] = useState(true)
 
-	if (!games.data) {
+	if (!games) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />
 			</div>
 		)
 	}
-	const { prevGames, nextGames } = games.data
 	return (
 		<div className="">
 			<div className="flex justify-center items-center gap-x-2">

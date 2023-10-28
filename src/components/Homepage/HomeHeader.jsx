@@ -1,11 +1,12 @@
 import GamesContainer from "../Game/GamesContainer"
 import { FiChevronDown } from "react-icons/fi"
 import LoadingSpinner from "../LoadingSpinner"
-import { useGlobalContext } from "../../context"
+// import { useGlobalContext } from "../../context"
+import { useLoaderData } from "react-router-dom"
 
 const HomeHeader = () => {
-	const { games } = useGlobalContext()
-	if (!games.data) {
+	const { games, nextGames } = useLoaderData()
+	if (!games) {
 		return (
 			<div className=" hero relative object-cover">
 				<div className="w-4/5 md:w-full md:mx-0 child top-[50%] left-[50%] md:top-[70%] ">
@@ -27,7 +28,6 @@ const HomeHeader = () => {
 			</div>
 		)
 	}
-	const { nextGames } = games.data
 
 	return (
 		<div className=" hero relative object-cover">

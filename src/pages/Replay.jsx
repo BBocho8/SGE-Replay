@@ -1,9 +1,8 @@
 import { useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
-import { useGlobalContext } from "../context"
 import { sortVideoGames } from "../../utils/sortGames"
 import removeAccents from "remove-accents"
-import { Link } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import LoadingSpinner from "../components/LoadingSpinner"
 
 const getFilteredItems = (query, items) => {
@@ -24,7 +23,9 @@ const getFilteredItems = (query, items) => {
 }
 
 const Replay = () => {
-	const { videoGames } = useGlobalContext()
+	const { videoGames: data } = useLoaderData()
+	const { videoGames } = data
+
 	const [isCompetition, setIsCompetition] = useState("all")
 	const [query, setQuery] = useState("")
 
