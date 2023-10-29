@@ -1,5 +1,4 @@
 import GamesContainer from "./GamesContainer"
-import { nanoid } from "nanoid"
 
 import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules"
 
@@ -33,9 +32,8 @@ const NextGames = ({ isResult, isHomepage, games }) => {
 			>
 				{games.map((game) => {
 					return (
-						<SwiperSlide key={nanoid()}>
+						<SwiperSlide key={game.id}>
 							<GamesContainer
-								key={game.id}
 								isResult={isResult}
 								isHomepage={isHomepage}
 								{...game}

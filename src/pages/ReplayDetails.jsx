@@ -1,6 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { useState } from "react"
-import { nanoid } from "nanoid"
 import LoadingSpinner from "../components/LoadingSpinner"
 import { getFormattedDate, getFormattedTime } from "../utils/formatDate"
 
@@ -83,7 +82,7 @@ const ReplayDetails = () => {
 				{result.map((res) => {
 					return (
 						<button
-							key={nanoid()}
+							key={`${result.homeTeam}${result.awayTeam}`}
 							className="btn"
 							onClick={() => handleClick(res)}
 						>

@@ -1,5 +1,3 @@
-import { nanoid } from "nanoid"
-
 const TableContainer = ({ table, isHomepage }) => {
 	return (
 		<div className="ptable  ">
@@ -37,7 +35,7 @@ const TableContainer = ({ table, isHomepage }) => {
 							} = club
 							return (
 								<tr
-									key={nanoid()}
+									key={team}
 									className={`${isPromotion && "promotion"} ${
 										isRelegation && "relegation"
 									} ${
