@@ -1,8 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom"
 import { useState } from "react"
 import { nanoid } from "nanoid"
-import { getFormattedDate, getFormattedTime } from "../../utils/formatDate"
 import LoadingSpinner from "../components/LoadingSpinner"
+import { getFormattedDate, getFormattedTime } from "../utils/formatDate"
 
 const ReplayDetails = () => {
 	const [gamePart, setGamePart] = useState("")

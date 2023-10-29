@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom"
 import Navbar from "../components/Main/Navbar"
 import FooterPage from "../components/Main/Footer"
 import BottomNav from "../components/Main/BottomNav"
-import { fetchVideoGames } from "../../utils/fetchVideo"
-import { fetchGames } from "../../utils/fetchGames"
+import { fetchGames } from "../utils/fetchGames"
+import { fetchVideoGames } from "../utils/fetchVideo"
 
 export const loader = async () => {
 	const { games, prevGames, nextGames, table } = await fetchGames()

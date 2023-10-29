@@ -1,7 +1,7 @@
-var myHeaders = new Headers()
-myHeaders.append("x-auth-token", "01C6C937L5P333Z5F9k960m4q6vJrmJMMSKJDGWOnu")
+let myHeaders = new Headers()
+myHeaders.append("x-auth-token", import.meta.env.VITE_GAMES_ACCESS_DE_TOKEN)
 
-var requestOptions = {
+let requestOptions = {
 	method: "GET",
 	headers: myHeaders,
 	redirect: "follow",
@@ -10,7 +10,7 @@ var requestOptions = {
 export async function fetchGames() {
 	try {
 		const fetchData = await fetch(
-			"/api/team/02EPUU1T88000000VS5489B1VT0RKM5V",
+			`/api/team/${import.meta.env.VITE_DE_TEAM_ID}`,
 			requestOptions
 		)
 		const response = await fetchData.json()

@@ -1,7 +1,7 @@
-import getYoutubeID from "../../../utils/getYoutubeID"
 import gameImg from "../../assets/images/team.jpg"
 import { Link } from "react-router-dom"
-import { getFormattedDate, getFormattedTime } from "../../../utils/formatDate"
+import getYoutubeID from "../../utils/getYoutubeID"
+import { getFormattedDate, getFormattedTime } from "../../utils/formatDate"
 
 const GamesContainer = ({
 	id,

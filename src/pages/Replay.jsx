@@ -1,9 +1,9 @@
 import { useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
-import { sortVideoGames } from "../../utils/sortGames"
 import removeAccents from "remove-accents"
 import { Link, useLoaderData } from "react-router-dom"
 import LoadingSpinner from "../components/LoadingSpinner"
+import { sortVideoGames } from "../utils/sortGames"
 
 const getFilteredItems = (query, items) => {
 	if (!query) {
