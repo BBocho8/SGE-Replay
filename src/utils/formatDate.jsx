@@ -12,6 +12,8 @@ export const getFormattedDate = (date) => {
 	return formattedDate
 }
 
+// Test pour commit
+
 export const getFormattedTime = (date) => {
 	let str = date
 	if (typeof str === "string") {
