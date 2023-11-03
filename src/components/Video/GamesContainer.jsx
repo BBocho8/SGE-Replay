@@ -15,7 +15,7 @@ const GamesContainer = ({
 }) => {
 	return (
 		<div key={id} className="mx-auto py-4 ">
-			<div className="max-w-md  md:max-w-sm border rounded-sm shadow-sm">
+			<div className="max-w-md  md:max-w-sm border rounded-sm shadow-sm bg-gray-100  border-gray-400">
 				<Link to={`/replay/${id}`}>
 					{isVideoAvailable ? (
 						<img
@@ -29,13 +29,13 @@ const GamesContainer = ({
 					) : (
 						<img src={gameImg} alt={`${homeTeam} ${awayTeam} ${competition}`} />
 					)}
-					<div className="flex flex-col items-center justify-center my-3">
-						<p className="font-bold">{competition}</p>
-						<p>
+					<div className="flex flex-col items-center justify-center my-4">
+						<p className="text-lg uppercase">{competition}</p>
+						<p className="font-bold">
 							{homeTeam} vs {awayTeam}
 						</p>
 						<p>{getFormattedDate(date)}</p>
-						<p>{getFormattedTime(date)}</p>
+						<p className="text-sm">{getFormattedTime(date)}</p>
 						{isVideoAvailable ? (
 							<button className="btn">Full game</button>
 						) : (
