@@ -1,6 +1,6 @@
 const TableContainer = ({ table, isHomepage }) => {
 	return (
-		<div className="ptable  ">
+		<div className="ptable mx-3 sm:mx-0  ">
 			<h1 className=" text-h2 text-center uppercase">BEZIRKSLIGA MITTE</h1>
 			<h3 className="text-center mb-0">League Table</h3>
 			<div
@@ -69,7 +69,7 @@ const TableContainer = ({ table, isHomepage }) => {
 												team === "SGE Mendig" ? "h-10 w-10" : "h-8 w-8"
 											}
 										/>{" "}
-										<p className="text-center">{team}</p>
+										<p className="">{team}</p>
 									</td>
 									<td
 										className={

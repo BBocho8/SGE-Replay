@@ -29,7 +29,7 @@
 
 	th,
 	td {
-		@apply p-4;
+		@apply p-2 sm:p-4;
 	}
 	th {
 		@apply bg-black bg-opacity-80 text-white;
@@ -61,7 +61,7 @@
 
 	/* --------- HERO HEADER --------- */
 	.hero {
-		@apply w-screen h-nav flex  justify-center items-center text-center bg-cover bg-center bg-no-repeat bg-fixed bg-[url("./assets/images/homeheadertest.jpg")];
+		@apply w-screen h-nav flex  justify-center items-center text-center bg-cover bg-center bg-no-repeat  bg-fixed bg-[url("./assets/images/homeheadertest.jpg")];
 	}
 
 	.child {
@@ -81,7 +81,7 @@
 	}
 	.promotion,
 	.relegation {
-		@apply text-center;
+		@apply text-left;
 	}
 	.promotion td {
 		@apply text-black bg-lime-400;
@@ -99,10 +99,10 @@
 		@apply flex justify-between items-center p-4 nav:p-0;
 	}
 	.nav-toggle {
-		@apply text-nav text-black bg-transparent border-transparent transition delay-150 duration-300 ease-in-out nav:hidden;
+		@apply text-nav text-black bg-transparent border-transparent transition delay-100 duration-200 ease-in-out nav:hidden;
 	}
 	.nav-toggle:hover {
-		@apply text-green-600 rotate-90;
+		@apply text-primaryGreen rotate-90;
 	}
 	.logo {
 		@apply h-10;

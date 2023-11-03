@@ -68,7 +68,14 @@ const Navbar = () => {
 
 						<p className="text-black font-bold">SG MENDIG REPLAY</p>
 					</div>
-					<button className="nav-toggle" onClick={toggleLinks}>
+					<button
+						className={
+							showLinks
+								? "nav-toggle text-primaryGreen rotate-90"
+								: "nav-toggle"
+						}
+						onClick={toggleLinks}
+					>
 						<FaBars />
 					</button>
 				</div>

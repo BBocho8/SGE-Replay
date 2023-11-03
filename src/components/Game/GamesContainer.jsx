@@ -1,4 +1,4 @@
-import Game from "./Game"
+import GameTest from "./GameTest"
 
 const GamesContainer = ({
 	isResult,
@@ -15,7 +15,7 @@ const GamesContainer = ({
 }) => {
 	return (
 		<div>
-			<Game
+			<GameTest
 				isResult={isResult}
 				isHomepage={isHomepage}
 				homeLogo={homeLogo}

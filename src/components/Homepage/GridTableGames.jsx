@@ -8,6 +8,8 @@ const GridTableGames = () => {
 	const { isGamesLoading, games } = useGetAllGames()
 	const { table, prevGames, nextGames } = games.data
 
+	console.log(nextGames[0])
+
 	if (!games || isGamesLoading) {
 		return (
 			<div className="flex-center">
