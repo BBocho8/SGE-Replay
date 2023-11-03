@@ -3,7 +3,9 @@ const TableContainer = ({ table, isHomepage }) => {
 		<div className="ptable  ">
 			<h1 className=" text-h2 text-center uppercase">BEZIRKSLIGA MITTE</h1>
 			<h3 className="text-center mb-0">League Table</h3>
-			<div className={isHomepage && "xl:max-h-96 xl:overflow-y-auto"}>
+			<div
+				className={isHomepage ? "xl:max-h-96 xl:overflow-y-auto" : undefined}
+			>
 				<table className="border border-gray-200 ">
 					<thead>
 						<tr className="col">
@@ -36,13 +38,12 @@ const TableContainer = ({ table, isHomepage }) => {
 							return (
 								<tr
 									key={team}
-									className={`${isPromotion && "promotion"} ${
-										isRelegation && "relegation"
+									className={`${isPromotion ? "promotion" : undefined} ${
+										isRelegation ? "relegation" : undefined
 									} ${
-										team === "SGE Mendig" &&
-										!isRelegation &&
-										!isPromotion &&
-										"bg-orange-100"
+										team === "SGE Mendig" && !isRelegation && !isPromotion
+											? "bg-orange-100"
+											: undefined
 									} border border-gray-200`}
 								>
 									<td

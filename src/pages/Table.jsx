@@ -6,6 +6,8 @@ const Table = () => {
 	const { isGamesLoading, games } = useGetAllGames()
 	const { table } = games.data
 
+	const isHomepage = false
+
 	if (!games || isGamesLoading) {
 		return (
 			<div className="flex-center">
@@ -15,7 +17,7 @@ const Table = () => {
 	}
 	return (
 		<div className="mx-1 nav:mx-0">
-			<TableContainer table={table} isHomepage={false} />
+			<TableContainer table={table} isHomepage={isHomepage} />
 		</div>
 	)
 }

@@ -80,10 +80,10 @@ const ReplayDetails = () => {
 				<span>{getFormattedTime(date)}</span>
 			</p>
 			<div className="flex justify-center items-center gap-x-2 my-2">
-				{result.map((res) => {
+				{result.map((res, index) => {
 					return (
 						<button
-							key={`${result.homeTeam}${result.awayTeam}`}
+							key={index}
 							className="btn"
 							onClick={() => handleClick(res)}
 						>
