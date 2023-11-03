@@ -61,7 +61,7 @@
 
 	/* --------- HERO HEADER --------- */
 	.hero {
-		@apply w-screen h-nav flex  justify-center items-center text-center bg-cover bg-center bg-no-repeat  bg-fixed bg-[url("./assets/images/homeheadertest.jpg")];
+		@apply w-screen h-nav flex  justify-center items-center text-center bg-cover bg-center bg-no-repeat  bg-scroll bg-[url("./assets/images/homeheadertest.jpg")];
 	}
 
 	.child {
