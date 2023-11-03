@@ -6,7 +6,7 @@
 
 @layer base {
 	body {
-		@apply nav:text-body font-sans min-h-screen;
+		@apply nav:text-body font-sans min-h-screen bg-white;
 	}
 	h1,
 	h2,
