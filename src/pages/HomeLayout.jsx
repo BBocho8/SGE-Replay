@@ -6,6 +6,7 @@ import BottomNav from "../components/Main/BottomNav"
 import { useGetAllGames } from "../utils/fetchGames"
 import LoadingSpinner from "../components/LoadingSpinner"
 import { useGetAllVideos } from "../utils/fetchVideo"
+import { useQuery } from "@tanstack/react-query"
 
 const HomeLayout = () => {
 	const { isGamesLoading, games } = useGetAllGames()

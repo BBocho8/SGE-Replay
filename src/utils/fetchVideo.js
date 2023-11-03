@@ -74,6 +74,7 @@ export const useGetAllVideos = () => {
 			const { data } = await getVideos.get("/videos")
 			return data
 		},
+		staleTime: 60 * 5000,
 	})
 	return { isVideosLoading, isVideosError, data }
 }

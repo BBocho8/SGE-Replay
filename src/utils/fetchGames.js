@@ -41,6 +41,7 @@ export const useGetAllGames = () => {
 			const { data } = await getGames.get("/games")
 			return { data }
 		},
+		staleTime: 60 * 5000,
 	})
 	return { isGamesLoading, isGamesError, games }
 }
