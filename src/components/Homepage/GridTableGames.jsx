@@ -2,12 +2,13 @@ import LastGames from "../Game/LastGames"
 import NextGames from "../Game/NextGames"
 import TableContainer from "../Classement/TableContainer"
 import LoadingSpinner from "../LoadingSpinner"
-import { useLoaderData } from "react-router-dom"
+import { useGetAllGames } from "../../utils/fetchGames"
 
 const GridTableGames = () => {
-	const { games, prevGames, nextGames, table } = useLoaderData()
+	const { isGamesLoading, games } = useGetAllGames()
+	const { table, prevGames, nextGames } = games.data
 
-	if (!games) {
+	if (!games || isGamesLoading) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />
@@ -25,7 +26,7 @@ const GridTableGames = () => {
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			</div>
-			<div className="my-8  mx-1 xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto  ">
+			<div className="my-8  mx-auto xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto  ">
 				<TableContainer table={table} isHomepage={true} />
 			</div>
 		</section>

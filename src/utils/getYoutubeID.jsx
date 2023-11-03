@@ -6,7 +6,6 @@ const getYoutubeID = (url) => {
 
 		return `https://i.ytimg.com/vi/${str}/maxresdefault.jpg`
 	}
-	console.log("Variable needs to be a string")
 }
 
 export default getYoutubeID

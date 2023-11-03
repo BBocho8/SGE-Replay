@@ -2,14 +2,15 @@ import { useState } from "react"
 import LastGames from "../components/Game/LastGames"
 import NextGames from "../components/Game/NextGames"
 import LoadingSpinner from "../components/LoadingSpinner"
-import { useLoaderData } from "react-router-dom"
+import { useGetAllGames } from "../utils/fetchGames"
 
 const Results = () => {
-	const { games, prevGames, nextGames } = useLoaderData()
+	const { isGamesLoading, games } = useGetAllGames()
+	const { prevGames, nextGames } = games.data
 
 	const [isResultsOpen, setIsResultsOpen] = useState(true)
 
-	if (!games) {
+	if (isGamesLoading) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />

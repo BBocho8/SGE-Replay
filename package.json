@@ -16,6 +16,7 @@
 		"@fontsource/roboto": "^5.0.8",
 		"@mui/material": "^5.14.14",
 		"@tanstack/react-query": "^5.0.0",
+		"@tanstack/react-query-devtools": "^5.4.3",
 		"axios": "^1.5.1",
 		"contentful": "^10.6.4",
 		"flowbite-react": "^0.6.4",

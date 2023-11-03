@@ -1,14 +1,15 @@
-import { useLoaderData, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useState } from "react"
 import LoadingSpinner from "../components/LoadingSpinner"
 import { getFormattedDate, getFormattedTime } from "../utils/formatDate"
+import { useGetAllVideos } from "../utils/fetchVideo"
 
 const ReplayDetails = () => {
 	const [gamePart, setGamePart] = useState("")
 	const [isResultOpen, setIsResultOpen] = useState(false)
 
 	const { gameID } = useParams()
-	const { videoGames: data } = useLoaderData()
+	const { isVideosLoading, data } = useGetAllVideos()
 	const { videoGames } = data
 
 	const game = videoGames?.find((videoGame) => {
@@ -16,7 +17,7 @@ const ReplayDetails = () => {
 			return videoGame
 		}
 	})
-	if (!game) {
+	if (isVideosLoading || !game) {
 		return (
 			<div className="flex-center my-4">
 				<LoadingSpinner />

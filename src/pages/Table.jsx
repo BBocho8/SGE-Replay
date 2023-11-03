@@ -1,11 +1,12 @@
-import { useLoaderData } from "react-router-dom"
 import TableContainer from "../components/Classement/TableContainer"
 import LoadingSpinner from "../components/LoadingSpinner"
+import { useGetAllGames } from "../utils/fetchGames"
 
 const Table = () => {
-	const { games, table } = useLoaderData()
+	const { isGamesLoading, games } = useGetAllGames()
+	const { table } = games.data
 
-	if (!games) {
+	if (!games || isGamesLoading) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />

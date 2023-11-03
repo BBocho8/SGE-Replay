@@ -1,9 +1,10 @@
 import { useState } from "react"
 import GamesContainer from "../components/Video/GamesContainer"
 import removeAccents from "remove-accents"
-import { Link, useLoaderData } from "react-router-dom"
+import { Link } from "react-router-dom"
 import LoadingSpinner from "../components/LoadingSpinner"
 import { sortVideoGames } from "../utils/sortGames"
+import { useGetAllVideos } from "../utils/fetchVideo"
 
 const getFilteredItems = (query, items) => {
 	if (!query) {
@@ -23,13 +24,13 @@ const getFilteredItems = (query, items) => {
 }
 
 const Replay = () => {
-	const { videoGames: data } = useLoaderData()
+	const { isVideosLoading, data } = useGetAllVideos()
 	const { videoGames } = data
 
 	const [isCompetition, setIsCompetition] = useState("all")
 	const [query, setQuery] = useState("")
 
-	if (!videoGames) {
+	if (isVideosLoading || !data) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />
@@ -156,4 +157,5 @@ const Replay = () => {
 		</section>
 	)
 }
+
 export default Replay

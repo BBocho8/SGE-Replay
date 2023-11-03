@@ -1,3 +1,6 @@
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
+
 let myHeaders = new Headers()
 myHeaders.append("x-auth-token", import.meta.env.VITE_GAMES_ACCESS_DE_TOKEN)
 
@@ -21,4 +24,23 @@ export async function fetchGames() {
 	} catch (error) {
 		console.log(error)
 	}
+}
+
+export const getGames = axios.create({
+	baseURL: import.meta.env.VITE_SGE_DB_URL,
+})
+
+export const useGetAllGames = () => {
+	const {
+		isLoading: isGamesLoading,
+		data: games,
+		isError: isGamesError,
+	} = useQuery({
+		queryKey: ["games"],
+		queryFn: async () => {
+			const { data } = await getGames.get("/games")
+			return { data }
+		},
+	})
+	return { isGamesLoading, isGamesError, games }
 }

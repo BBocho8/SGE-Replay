@@ -1,3 +1,5 @@
+import { useQuery } from "@tanstack/react-query"
+import axios from "axios"
 import { createClient } from "contentful"
 
 const client = createClient({
@@ -55,4 +57,23 @@ export const fetchVideoGames = async () => {
 		console.log(error)
 		// setLoading(false)
 	}
+}
+
+export const getVideos = axios.create({
+	baseURL: import.meta.env.VITE_SGE_DB_URL,
+})
+
+export const useGetAllVideos = () => {
+	const {
+		isLoading: isVideosLoading,
+		data,
+		isError: isVideosError,
+	} = useQuery({
+		queryKey: ["videos"],
+		queryFn: async () => {
+			const { data } = await getVideos.get("/videos")
+			return data
+		},
+	})
+	return { isVideosLoading, isVideosError, data }
 }
