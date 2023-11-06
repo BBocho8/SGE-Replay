@@ -61,12 +61,17 @@ const Navbar = () => {
 			<div className="nav-center">
 				<div className="nav-header">
 					<div
-						className="flex gap-x-2 items-center justify-center cursor-pointer"
+						className="flex gap-x-3 items-center justify-center cursor-pointer"
 						onClick={() => navigate("/")}
 					>
 						<img src={logo} alt="logo" className="logo" />
 
-						<p className="text-black font-bold">SG MENDIG REPLAY</p>
+						<p className="text-black tracking-wide">
+							<span className="text-white bg-primaryGreen rounded-sm p-0.5 mr-1 ">
+								SGE
+							</span>
+							REPLAY
+						</p>
 					</div>
 					<button
 						className={
