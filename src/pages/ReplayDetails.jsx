@@ -84,7 +84,7 @@ const ReplayDetails = () => {
 					return (
 						<button
 							key={index}
-							className="btn"
+							className={res === gamePart ? "btn bg-black" : "btn"}
 							onClick={() => handleClick(res)}
 						>
 							{res === "firstHalf1"
