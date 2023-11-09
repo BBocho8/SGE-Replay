@@ -79,7 +79,7 @@ const ReplayDetails = () => {
 				<span>{getFormattedDate(date)}</span> -{" "}
 				<span>{getFormattedTime(date)}</span>
 			</p>
-			<div className="flex justify-center items-center gap-x-2 my-2">
+			<div className="flex justify-center items-center gap-x-2 my-2 flex-wrap gap-y-2">
 				{result.map((res, index) => {
 					return (
 						<button
