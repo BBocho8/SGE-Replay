@@ -10,7 +10,7 @@ const GridTableGames = () => {
 
 	console.log(nextGames[0])
 
-	if (!games || isGamesLoading) {
+	if (!games || isGamesLoading || !table || !prevGames || !nextGames) {
 		return (
 			<div className="flex-center">
 				<LoadingSpinner />
@@ -28,7 +28,7 @@ const GridTableGames = () => {
 					<NextGames isResult={false} isHomepage={false} games={nextGames} />
 				</div>
 			</div>
-			<div className="my-8  mx-auto xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto  ">
+			<div className="mx-auto my-8 xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto ">
 				<TableContainer table={table} isHomepage={true} />
 			</div>
 		</section>
