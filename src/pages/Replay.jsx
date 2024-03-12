@@ -50,8 +50,8 @@ const Replay = () => {
 
 	return (
 		<section>
-			<h1 className="text-center text-h2 uppercase">All Full Game Replays</h1>
-			<div className="flex justify-center items-center gap-2 flex-wrap">
+			<h1 className="text-center uppercase text-h2">All Full Game Replays</h1>
+			<div className="flex flex-wrap items-center justify-center gap-2">
 				{competitions.map((competition) => {
 					return (
 						<button
@@ -70,21 +70,21 @@ const Replay = () => {
 					ALL GAMES
 				</button>
 			</div>
-			<div className="flex flex-col gap-y-2 justify-center items-center py-4">
+			<div className="flex flex-col items-center justify-center py-4 gap-y-2">
 				<input
 					type="search"
 					name="search"
 					id="search"
 					onChange={(e) => setQuery(e.target.value)}
 					placeholder="Search for a game"
-					className="border-primaryGreen placeholder:text-black placeholder:opacity-70 focus:border-primaryGreen focus:ring-primaryGreen rounded-sm"
+					className="rounded-sm border-primaryGreen placeholder:text-black placeholder:opacity-70 focus:border-primaryGreen focus:ring-primaryGreen"
 				/>
 
 				<ul className="overflow-y-auto max-h-52">
 					{query.length > 2 &&
 						filteredItems.map((game) => (
 							<Link key={game.id} to={`/replay/${game.id}`}>
-								<p className="bg-white text-black px-4 py-2 hover:bg-gray-300 border ">
+								<p className="px-4 py-2 text-black bg-white border hover:bg-gray-300 ">
 									{game.homeTeam} - {game.awayTeam}
 								</p>
 							</Link>
@@ -92,7 +92,7 @@ const Replay = () => {
 				</ul>
 			</div>
 
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center px-8 gap-x-2">
+			<div className="grid items-center justify-center grid-cols-1 px-8 md:grid-cols-2 lg:grid-cols-3 gap-x-2">
 				{isCompetition === "all"
 					? sortedGames.map((game) => {
 							const {
