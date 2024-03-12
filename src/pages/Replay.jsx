@@ -92,7 +92,7 @@ const Replay = () => {
 				</ul>
 			</div>
 
-			<div className="grid items-center justify-center grid-cols-1 px-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-2">
+			<div className="grid items-center justify-center grid-cols-1 px-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-x-2">
 				{isCompetition === "all"
 					? sortedGames.map((game) => {
 							const {
