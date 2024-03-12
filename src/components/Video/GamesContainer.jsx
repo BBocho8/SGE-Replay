@@ -29,7 +29,11 @@ const GamesContainer = ({
 							className="rounded-xl"
 						/>
 					) : (
-						<img src={gameImg} alt={`${homeTeam} ${awayTeam} ${competition}`} />
+						<img
+							src={gameImg}
+							alt={`${homeTeam} ${awayTeam} ${competition}`}
+							className="rounded-xl"
+						/>
 					)}
 					<div className="flex flex-col my-4">
 						<div className="flex items-center justify-start px-4 gap-x-3">
