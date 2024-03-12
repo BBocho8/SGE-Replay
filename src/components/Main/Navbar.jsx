@@ -30,12 +30,12 @@ const social = [
 	{
 		id: 1,
 		url: "https://www.facebook.com/SGEintrachtMendigBell",
-		icon: <FaFacebook className="h-5  w-5 hover:opacity-80" />,
+		icon: <FaFacebook className="w-5 h-5 hover:opacity-80" />,
 	},
 	{
 		id: 2,
 		url: "https://www.instagram.com/sgeintrachtmendigbell/",
-		icon: <FaInstagram className="h-5  w-5 hover:opacity-80" />,
+		icon: <FaInstagram className="w-5 h-5 hover:opacity-80" />,
 	},
 ]
 
@@ -61,12 +61,12 @@ const Navbar = () => {
 			<div className="nav-center">
 				<div className="nav-header">
 					<div
-						className="flex gap-x-3 items-center justify-center cursor-pointer"
+						className="flex items-center justify-center cursor-pointer gap-x-3"
 						onClick={() => navigate("/")}
 					>
 						<img src={logo} alt="logo" className="logo" />
 
-						<p className="text-black tracking-wide">
+						<p className="tracking-wide text-black">
 							<span className="text-white bg-primaryGreen rounded-sm p-0.5 mr-1 ">
 								SGE
 							</span>
@@ -89,7 +89,7 @@ const Navbar = () => {
 					ref={linkContainerRef}
 					style={linkStyles}
 				>
-					<div className="flex gap-4 justify-center links" ref={linksRef}>
+					<div className="flex justify-center gap-4 links" ref={linksRef}>
 						{links.map((link) => {
 							const { id, url, text } = link
 							return (
@@ -115,11 +115,11 @@ const Navbar = () => {
 					{social.map((socialIcon) => {
 						const { id, url, icon } = socialIcon
 						return (
-							<li key={id}>
-								<Link href={url} target="_blank" rel="noreferrer">
+							<Link key={id}>
+								<a href={url} target="_blank" rel="noreferrer">
 									{icon}
-								</Link>
-							</li>
+								</a>
+							</Link>
 						)
 					})}
 				</ul>
