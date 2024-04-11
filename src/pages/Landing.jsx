@@ -6,8 +6,8 @@ const Landing = () => {
 	return (
 		<div className="overflow-hidden">
 			<HomeHeader />
-			<GamesContainerV2 />
 			<div id="content">
+				<GamesContainerV2 />
 				<GridTableGames />
 			</div>
 		</div>
