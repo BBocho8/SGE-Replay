@@ -115,10 +115,8 @@ const Navbar = () => {
 					{social.map((socialIcon) => {
 						const { id, url, icon } = socialIcon
 						return (
-							<Link key={id}>
-								<a href={url} target="_blank" rel="noreferrer">
-									{icon}
-								</a>
+							<Link key={id} to={url} target="_blank" rel="noreferrer">
+								{icon}
 							</Link>
 						)
 					})}

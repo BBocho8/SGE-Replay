@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line no-undef
 const defaultTheme = require("tailwindcss/defaultTheme")
 export default {
 	content: [
@@ -51,5 +52,6 @@ export default {
 			},
 		},
 	},
+	// eslint-disable-next-line no-undef
 	plugins: [require("flowbite/plugin")],
 }

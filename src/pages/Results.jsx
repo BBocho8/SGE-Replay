@@ -1,8 +1,8 @@
 import { useState } from "react"
-import LastGames from "../components/Game/LastGames"
-import NextGames from "../components/Game/NextGames"
+
 import LoadingSpinner from "../components/LoadingSpinner"
 import { useGetAllGames } from "../utils/fetchGames"
+import GameTestV2 from "../components/Game/GameTestV2"
 
 const Results = () => {
 	const { isGamesLoading, games } = useGetAllGames()
@@ -19,7 +19,7 @@ const Results = () => {
 	}
 	return (
 		<div className="">
-			<div className="flex justify-center items-center gap-x-2">
+			<div className="flex items-center justify-center gap-x-2">
 				<button
 					className={`btn ${!isResultsOpen && "bg-black"}`}
 					type="button"
@@ -37,12 +37,12 @@ const Results = () => {
 			</div>
 
 			{isResultsOpen ? (
-				<div className="py-2">
-					<LastGames isResult={true} isHomepage={false} games={prevGames} />
+				<div className="py-6">
+					<GameTestV2 games={prevGames} isNext={false} />
 				</div>
 			) : (
-				<div className="py-2">
-					<NextGames isResult={false} isHomepage={false} games={nextGames} />
+				<div className="py-6">
+					<GameTestV2 games={nextGames} isNext={true} />
 				</div>
 			)}
 		</div>
