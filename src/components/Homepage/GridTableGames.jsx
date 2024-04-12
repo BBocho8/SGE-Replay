@@ -16,7 +16,7 @@ const GridTableGames = () => {
 
 	return (
 		<section className="block xl:grid xl:grid-cols-12 xl:grid-rows-4 xl:max-w-screen-xl xl:py-12 xl:mx-auto ">
-			<div className="mx-auto my-8 xl:px-0 xl:mx-8 xl:col-span-6 xl:row-span-4 xl:my-auto ">
+			<div className="mx-auto my-8 xl:px-0 xl:mx-8 xl:col-start-4 xl:col-span-6 xl:row-span-4 xl:my-auto ">
 				<TableContainer table={table} isHomepage={true} />
 			</div>
 		</section>
