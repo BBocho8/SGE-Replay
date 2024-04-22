@@ -1,3 +1,5 @@
+//Test
+
 const GameTest = ({
 	isResult,
 	isHomepage,
@@ -12,51 +14,51 @@ const GameTest = ({
 	competition,
 }) => {
 	return (
-		<div className=" rounded-md bg-gray-200  py-4 px-4  shadow-xl max-w-xl mx-auto">
-			<div className="flex flex-col justify-center items-center ">
+		<div className="max-w-xl px-4 py-4 mx-auto bg-gray-200 rounded-md shadow-xl ">
+			<div className="flex flex-col items-center justify-center ">
 				{isHomepage && (
-					<p className="uppercase text-gray-600 text-sm">Next game</p>
+					<p className="text-sm text-gray-600 uppercase">Next game</p>
 				)}
-				<div className=" text-center  items-center uppercase font-bold tracking-wider">
+				<div className="items-center font-bold tracking-wider text-center uppercase ">
 					{competition}
 				</div>
 			</div>
 
-			<hr className="border border-gray-400 w-2/5 mx-auto mt-3" />
+			<hr className="w-2/5 mx-auto mt-3 border border-gray-400 " />
 
-			<div className="mt-4 flex justify-center items-start w-full h-24">
-				<div className="flex flex-col  items-center text-sm font-medium gap-y-2 w-1/3 ">
+			<div className="flex items-start justify-center w-full h-24 mt-4">
+				<div className="flex flex-col items-center w-1/3 text-sm font-medium gap-y-2 ">
 					<img
 						src={homeLogo}
 						alt="home team logo"
-						className="w-14 h-14 rounded-full shadow-sm"
+						className="rounded-full shadow-sm w-14 h-14"
 					/>
-					<span className="truncate text-center w-full">{homeTeam}</span>
+					<span className="w-full text-center truncate">{homeTeam}</span>
 				</div>
-				<div className="flex flex-col h-full w-1/3 items-center">
-					<p className="text-black text-sm flex flex-col   text-center">
+				<div className="flex flex-col items-center w-1/3 h-full">
+					<p className="flex flex-col text-sm text-center text-black">
 						<span className="font-semibold">{date}</span>
 						<span>{time}</span>
 					</p>
 
 					{isResult ? (
-						<div className="tracking-widest text-3xl font-bold my-auto flex justify-center items-center ">
+						<div className="flex items-center justify-center my-auto text-3xl font-bold tracking-widest ">
 							<span>{`${homeScore}-${awayScore}`}</span>
 						</div>
 					) : (
-						<div className="tracking-widest text-md font-semibold mt-auto  border-2 border-black rounded-full w-12 h-12 flex justify-center items-center shadow-md">
+						<div className="flex items-center justify-center w-12 h-12 mt-auto font-semibold tracking-widest border-2 border-black rounded-full shadow-md text-md">
 							<span>VS</span>
 						</div>
 					)}
 				</div>
 
-				<div className="flex flex-col  items-center text-sm font-medium  gap-y-2 w-1/3">
+				<div className="flex flex-col items-center w-1/3 text-sm font-medium gap-y-2">
 					<img
 						src={awayLogo}
 						alt="away team logo"
-						className="w-14 h-14 rounded-full shadow-sm"
+						className="rounded-full shadow-sm w-14 h-14"
 					/>
-					<span className="truncate text-center w-full">{awayTeam}</span>
+					<span className="w-full text-center truncate">{awayTeam}</span>
 				</div>
 			</div>
 		</div>
