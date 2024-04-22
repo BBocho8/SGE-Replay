@@ -1,5 +1,3 @@
-//Test
-
 const GameTest = ({
 	isResult,
 	isHomepage,
