@@ -1,8 +1,8 @@
-import { useRef, useState } from "react"
-import { FaBars } from "react-icons/fa"
-import { FaFacebook, FaInstagram } from "react-icons/fa"
-import { Link, NavLink, useNavigate } from "react-router-dom"
-import logo from "../../assets/logo.png"
+import { useRef, useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { FaFacebook, FaInstagram } from "react-icons/fa";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 const links = [
 	{
@@ -25,7 +25,7 @@ const links = [
 		url: "/results",
 		text: "results",
 	},
-]
+];
 const social = [
 	{
 		id: 1,
@@ -34,45 +34,45 @@ const social = [
 	},
 	{
 		id: 2,
-		url: "https://www.instagram.com/sgeintrachtmendigbell/",
+		url: "https://www.instagram.com/sveintrachtmendig/",
 		icon: <FaInstagram className="w-5 h-5 hover:opacity-80" />,
 	},
-]
+];
 
 const Navbar = () => {
-	const navigate = useNavigate()
-	const [showLinks, setShowLinks] = useState(false)
+	const navigate = useNavigate();
+	const [showLinks, setShowLinks] = useState(false);
 
-	const linkContainerRef = useRef(null)
-	const linksRef = useRef(null)
+	const linkContainerRef = useRef(null);
+	const linksRef = useRef(null);
 
 	const toggleLinks = () => {
-		setShowLinks(!showLinks)
-	}
+		setShowLinks(!showLinks);
+	};
 
 	const linkStyles = {
 		height: showLinks
 			? `${linksRef.current.getBoundingClientRect().height}px`
 			: "0px",
-	}
+	};
 
 	return (
 		<nav>
 			<div className="nav-center">
 				<div className="nav-header">
-					<div
+					<Link
 						className="flex items-center justify-center cursor-pointer gap-x-3"
-						onClick={() => navigate("/")}
+						to={"/"}
 					>
 						<img src={logo} alt="logo" className="logo" />
 
 						<p className="tracking-wide text-black">
 							<span className="text-white bg-primaryGreen rounded-sm p-0.5 mr-1 ">
-								SGE
+								SVE
 							</span>
 							REPLAY
 						</p>
-					</div>
+					</Link>
 					<button
 						className={
 							showLinks
@@ -80,6 +80,7 @@ const Navbar = () => {
 								: "nav-toggle"
 						}
 						onClick={toggleLinks}
+						type="button"
 					>
 						<FaBars />
 					</button>
@@ -91,7 +92,7 @@ const Navbar = () => {
 				>
 					<div className="flex justify-center gap-4 links" ref={linksRef}>
 						{links.map((link) => {
-							const { id, url, text } = link
+							const { id, url, text } = link;
 							return (
 								<NavLink
 									key={id}
@@ -106,23 +107,23 @@ const Navbar = () => {
 								>
 									{text}
 								</NavLink>
-							)
+							);
 						})}
 					</div>
 				</div>
 				{/* SOCIAL LINKS */}
 				<ul className="social-icons">
 					{social.map((socialIcon) => {
-						const { id, url, icon } = socialIcon
+						const { id, url, icon } = socialIcon;
 						return (
 							<Link key={id} to={url} target="_blank" rel="noreferrer">
 								{icon}
 							</Link>
-						)
+						);
 					})}
 				</ul>
 			</div>
 		</nav>
-	)
-}
-export default Navbar
+	);
+};
+export default Navbar;
