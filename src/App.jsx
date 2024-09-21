@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {
 	Landing,
 	Table,
@@ -6,14 +6,14 @@ import {
 	Replay,
 	ReplayDetails,
 	HomeLayout,
-	Error,
-} from "./pages"
+	Error as ErrorComponent,
+} from "./pages";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: <HomeLayout />,
-		errorElement: <Error />,
+		errorElement: <ErrorComponent />,
 
 		children: [
 			{
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
 			},
 		],
 	},
-])
+]);
 const App = () => {
-	return <RouterProvider router={router} />
-}
-export default App
+	return <RouterProvider router={router} />;
+};
+export default App;
