@@ -17,7 +17,7 @@ const ErrorComponent = () => {
 				<p className="mt-2 mb-4 leading-6 text-gray-500">
 					We can&apos;t seem to find the page you are looking for!
 				</p>
-				<Link to="/" className="py-2">
+				<Link to="/replay" className="py-2">
 					<button type="button" className="btn">
 						back home
 					</button>
