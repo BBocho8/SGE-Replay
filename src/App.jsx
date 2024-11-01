@@ -1,5 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Replay, HomeLayout, Error as ErrorComponent } from "./pages";
+import {
+	Replay,
+	HomeLayout,
+	Error as ErrorComponent,
+	ReplayDetails,
+} from "./pages";
 
 const router = createBrowserRouter([
 	{
@@ -20,10 +25,10 @@ const router = createBrowserRouter([
 				path: "/replay",
 				element: <Replay />,
 			},
-			// {
-			// 	path: "replay/:gameID",
-			// 	element: <ReplayDetails />,
-			// },
+			{
+				path: "replay/:gameID",
+				element: <ReplayDetails />,
+			},
 
 			// {
 			// 	path: "/table",
