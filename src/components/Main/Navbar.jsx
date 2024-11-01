@@ -10,11 +10,11 @@ const links = [
 		url: "/",
 		text: "home",
 	},
-	// {
-	// 	id: 2,
-	// 	url: "/replay",
-	// 	text: "replay",
-	// },
+	{
+		id: 2,
+		url: "/replay",
+		text: "replay",
+	},
 	// {
 	// 	id: 3,
 	// 	url: "/table",

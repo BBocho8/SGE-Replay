@@ -2,23 +2,22 @@ import {
 	BottomNavigation,
 	BottomNavigationAction,
 	createTheme,
-} from "@mui/material"
-import { useState } from "react"
-import { FaHome, FaYoutube, FaListOl } from "react-icons/fa"
-import { IoIosStats } from "react-icons/io"
-import { useNavigate } from "react-router-dom"
-import { ThemeProvider } from "@mui/material/styles"
+} from "@mui/material";
+import { useState } from "react";
+import { FaHome, FaYoutube } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import { ThemeProvider } from "@mui/material/styles";
 const theme = createTheme({
 	palette: {
 		primary: {
 			main: "#15A34A",
 		},
 	},
-})
+});
 
 const BottomNav = () => {
-	const [btnValue, setBtnValue] = useState(0)
-	const navigate = useNavigate()
+	const [btnValue, setBtnValue] = useState(0);
+	const navigate = useNavigate();
 	return (
 		<ThemeProvider theme={theme}>
 			<BottomNavigation
@@ -39,7 +38,7 @@ const BottomNav = () => {
 					icon={<FaYoutube />}
 					onClick={() => navigate("/replay")}
 				/>
-				<BottomNavigationAction
+				{/* <BottomNavigationAction
 					label="Table"
 					value="table"
 					icon={<FaListOl />}
@@ -50,9 +49,9 @@ const BottomNav = () => {
 					value="results"
 					icon={<IoIosStats />}
 					onClick={() => navigate("/results")}
-				/>
+				/> */}
 			</BottomNavigation>
 		</ThemeProvider>
-	)
-}
-export default BottomNav
+	);
+};
+export default BottomNav;
