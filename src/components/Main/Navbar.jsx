@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const links = [
@@ -10,21 +10,21 @@ const links = [
 		url: "/",
 		text: "home",
 	},
-	{
-		id: 2,
-		url: "/replay",
-		text: "replay",
-	},
-	{
-		id: 3,
-		url: "/table",
-		text: "table",
-	},
-	{
-		id: 4,
-		url: "/results",
-		text: "results",
-	},
+	// {
+	// 	id: 2,
+	// 	url: "/replay",
+	// 	text: "replay",
+	// },
+	// {
+	// 	id: 3,
+	// 	url: "/table",
+	// 	text: "table",
+	// },
+	// {
+	// 	id: 4,
+	// 	url: "/results",
+	// 	text: "results",
+	// },
 ];
 const social = [
 	{
@@ -40,7 +40,6 @@ const social = [
 ];
 
 const Navbar = () => {
-	const navigate = useNavigate();
 	const [showLinks, setShowLinks] = useState(false);
 
 	const linkContainerRef = useRef(null);
